@@ -1,7 +1,7 @@
 # The difference between useEffect and useLayoutEffect
 
 ```
-`render`: render tree를 만들고 어디에 배치할 것인지, 계산하는 과정.
+`render`: render tree를 만들기 위한 계산을 하는 과정.
 `paint`: 위 단계에서 만들어진 render tree를 이용하여 실제 화면에 그리는 과정.
 ```
 
