@@ -9,5 +9,8 @@
 - [Overuse of useMemo and useCallback](/react/overuse-of-useMemo-and-useCallback.md)
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 
-## Typescript
+## typescript
 - [Import type only](/typescript/import-type-only.md)
+
+## javascript
+- [Proxy Grammar](/javascript/proxy-grammar.md)
