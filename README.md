@@ -11,6 +11,7 @@
 
 ## typescript
 - [Import type only](/typescript/import-type-only.md)
+- [Error handling with typescript](/typescript/error-handling-with-typescript.md)
 
 ## javascript
 - [Proxy Grammar](/javascript/proxy-grammar.md)
