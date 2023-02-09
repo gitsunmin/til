@@ -15,3 +15,4 @@
 
 ## javascript
 - [Proxy Grammar](/javascript/proxy-grammar.md)
+- [Performance comparison of Array.find and Array.indexOf](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
