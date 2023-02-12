@@ -1,7 +1,8 @@
 # TOC
 
 ## css
-- [object-fit](/css/object-fit.md)
+- [Object Fit](/css/object-fit.md)
+- [Replaced elements](/css/replaced-elements.md)
 
 ## html
 - [Good image files on the web, SVG](/html/good-image-files-on-the-web-SVG.md)
