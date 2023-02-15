@@ -1,11 +1,20 @@
 # TOC
 
+## browser
+- [Page Visibility API](/browser/page-visibility-api.md)
 ## css
 - [Object Fit](/css/object-fit.md)
 - [Replaced elements](/css/replaced-elements.md)
 
 ## html
 - [Good image files on the web, SVG](/html/good-image-files-on-the-web-SVG.md)
+
+## javascript
+- [Proxy Grammar](/javascript/proxy-grammar.md)
+- [Performance comparison of Array.find and Array.indexOf](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
+- [Promise.allSettled And Promise.all](/javascript/promise-all-settled-and-promise-all.md)
+- [shallow Merge And Deep Merge](/javascript/shallow-merge-and-deep-merge.md)
+
 ## network
 - [DNS (Domain Name System)](/network/DNS-domain-name-system.md)
 - [abortController](/network/abortController.md)
@@ -17,7 +26,3 @@
 ## typescript
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
-
-## javascript
-- [Proxy Grammar](/javascript/proxy-grammar.md)
-- [Performance comparison of Array.find and Array.indexOf](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
