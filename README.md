@@ -6,6 +6,9 @@
 - [Object Fit](/css/object-fit.md)
 - [Replaced elements](/css/replaced-elements.md)
 
+## git
+- [Checkkout Previous Branch](/git/checkout-previous-branch.md)
+
 ## html
 - [Good image files on the web, SVG](/html/good-image-files-on-the-web-SVG.md)
 
