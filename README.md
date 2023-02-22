@@ -30,3 +30,6 @@
 ## typescript
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
+
+## web
+- [A11y](/web/a11y.md)
