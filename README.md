@@ -9,6 +9,7 @@
 ## git
 - [Checkkout Previous Branch](/git/checkout-previous-branch.md)
 - [Resurrection of commit](/git/resurrection-of-commit.md)
+- [Import Only One File From A Stash](/git/import-only-one-file-from-a-stash.md)
 
 ## html
 - [Good image files on the web, SVG](/html/good-image-files-on-the-web-SVG.md)
