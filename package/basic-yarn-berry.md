@@ -1,6 +1,6 @@
 # Basic Yarn Berry
 
-기존 yarn v1에서는 사용되는 모든 패키지들이 마치 javascript에서의 호이스팅처럼 pakage.json에 명시하지도 않은 패키지를 import하여 사용할 수 있는 유령 의존성(Phantom Dependency)을 갖는 문제가 있었습니다.
+기존 yarn v1에서는 사용되는 모든 패키지들이 마치 javascript에서의 호이스팅처럼 package.json에 명시하지도 않은 패키지를 import하여 사용할 수 있는 유령 의존성(Phantom Dependency)을 갖는 문제가 있었습니다.
 
 yarn berry(Yarn v2)는 패키지들과 그 패키지들이 의존하는 모든 패키지들의 관계를 정의하였고, 그로인하여 생긴 방대한 module들은 `.zip` 파일로 관리하여 패키지 용량을 최소화 하였습니다.
 

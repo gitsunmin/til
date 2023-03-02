@@ -24,7 +24,7 @@
 - [DNS (Domain Name System)](/network/DNS-domain-name-system.md)
 - [abortController](/network/abortController.md)
 
-## pakage
+## package
 - [Basic Yarn Berry](/pakage/basic-yarn-berry.md)
 
 ## react
