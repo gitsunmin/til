@@ -30,7 +30,8 @@
 ## react
 - [Overuse of useMemo and useCallback](/react/overuse-of-useMemo-and-useCallback.md)
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
-
+## tauri
+- [tauri](/tauri/about-tauri.md)
 ## typescript
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
