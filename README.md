@@ -6,6 +6,8 @@
 - [Object Fit](/css/object-fit.md)
 - [Replaced elements](/css/replaced-elements.md)
 
+## database
+- [Basic Of Partitioning](/database/basic-of-%20partitioning.md)
 ## git
 - [Checkkout Previous Branch](/git/checkout-previous-branch.md)
 - [Resurrection of commit](/git/resurrection-of-commit.md)
