@@ -3,6 +3,7 @@
 ## browser
 - [Page Visibility API](/browser/page-visibility-api.md)
 ## css
+- [About Css Pseudo Class The Empty](/css/about-css-pseudo-class-the-empty.md)
 - [Object Fit](/css/object-fit.md)
 - [Replaced elements](/css/replaced-elements.md)
 
