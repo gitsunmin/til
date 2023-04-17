@@ -38,6 +38,7 @@
 ## tauri
 - [tauri](/tauri/about-tauri.md)
 ## typescript
+- [Create utility type Reverse](/typescript/create-utility-type-reverse.md)
 - [Declaration Merging](/typescript/declaration-merging.md)
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
