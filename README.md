@@ -7,6 +7,7 @@
 
 ## cs
 - [How to change kernel parameters](/cs/how-to-change-kernel-parameters.md)
+- [How to check system uptime and system load](/cs/how-to-check-system-uptime-and-system-load.md)
 ## css
 - [About Css Pseudo Class The Empty](/css/about-css-pseudo-class-the-empty.md)
 - [Object Fit](/css/object-fit.md)
