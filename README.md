@@ -4,6 +4,9 @@
 - [Checking the Console Log in Mobile Chrome](/browser/checking-the-console-log-in-mobile-chrome.md)
 - [Page Visibility API](/browser/page-visibility-api.md)
 - [View in HTML Layer 3D](/browser/view-in-html-Layer-3d.md)
+
+## cs
+- [How to change kernel parameters](/cs/how-to-change-kernel-parameters.md)
 ## css
 - [About Css Pseudo Class The Empty](/css/about-css-pseudo-class-the-empty.md)
 - [Object Fit](/css/object-fit.md)
