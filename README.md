@@ -1,5 +1,6 @@
 # TOC
-
+## algorithm
+- [Prefix Sum Algorithm](/algorithm/prefix-sum-algorithm.md)
 ## browser
 - [Checking the Console Log in Mobile Chrome](/browser/checking-the-console-log-in-mobile-chrome.md)
 - [Page Visibility API](/browser/page-visibility-api.md)
