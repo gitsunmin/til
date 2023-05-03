@@ -1,5 +1,6 @@
 # TOC
 ## algorithm
+- [Depth-First Search Algorithm](/algorithm/depth-first-search-algorithm.md)
 - [Prefix Sum Algorithm](/algorithm/prefix-sum-algorithm.md)
 - [Implementation Algorithm](/algorithm/implementation-algorithm.md)
 ## browser
