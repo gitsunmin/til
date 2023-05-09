@@ -25,6 +25,7 @@
 
 ## html
 - [Good image files on the web, SVG](/html/good-image-files-on-the-web-SVG.md)
+- [New HTML Element: search](/html/new-html-element-search.md)
 
 ## javascript
 - [Proxy Grammar](/javascript/proxy-grammar.md)
