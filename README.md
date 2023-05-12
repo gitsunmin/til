@@ -38,6 +38,7 @@
 - [abortController](/network/abortController.md)
 
 ## package
+- [Automatically sink the node version using .nvmrc](/package/automatically-sink-the-node-version-using-nvmrc.md)
 - [Basic Yarn Berry](/pakage/basic-yarn-berry.md)
 
 ## react
