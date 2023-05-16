@@ -53,6 +53,7 @@
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
 - [Keyword satisfies to upport safe upcast](/typescript/keyword-satisfies-to-support-safe-upcast.md)
+- [ts-pattern](/typescript/ts-pattern.md)
 - [Typescript infer keyword](/typescript/typescript-infer-keyword.md)
 
 ## web
