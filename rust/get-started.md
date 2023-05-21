@@ -172,3 +172,8 @@ $ cargo check
 
 ### Building for Release
 프로젝트가 마침내 릴리스할 준비가 되면 `cargo build --release`를 사용하여 최적화를 통해 컴파일할 수 있습니다. 이 명령은 `target/debug` 대신 `target/release`에 실행 파일을 생성합니다. 최적화를 사용하면 Rust 코드가 더 빠르게 실행되지만, 이 기능을 켜면 프로그램이 컴파일되는 시간이 길어집니다. 그렇기 때문에 개발용 프로필은 빠르고 자주 재빌드해야 할 때 사용하고, `--release` 프로필은 반복적으로 재빌드하지 않고 최대한 빠르게 실행되는 프로그램으로서, 사용자에게 제공할 최종 프로그램을 빌드할 때 사용합니다. 코드의 실행 시간을 벤치마킹하는 경우 `cargo build --release`를 실행하고 `target/release`의 실행 파일로 벤치마킹하세요.
+
+### The Result
+- [Hello World](https://github.com/gitsunmin/learning-rust/tree/master/the_rust_programing_language/1.hello_world)
+- [Hello Cargo](https://github.com/gitsunmin/learning-rust/tree/master/the_rust_programing_language/2.hello_cargo)
+- [Guessing Game](https://github.com/gitsunmin/learning-rust/tree/master/the_rust_programing_language/3.guessing_game)
