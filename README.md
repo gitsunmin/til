@@ -29,6 +29,7 @@
 - [New HTML Element: search](/html/new-html-element-search.md)
 
 ## javascript
+- [ECMAScript 2023](/javascript/ECMAScript-2023.md)
 - [Proxy Grammar](/javascript/proxy-grammar.md)
 - [Performance comparison of Array.find and Array.indexOf](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
 - [Promise.allSettled And Promise.all](/javascript/promise-all-settled-and-promise-all.md)
