@@ -49,6 +49,7 @@
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 ## rust
 - [Get Started](/rust/get-started.md)
+- [Variables and Mutability](/rust/variables-and-mutability.md)
 ## tauri
 - [tauri](/tauri/about-tauri.md)
 ## typescript
