@@ -3,6 +3,7 @@
 - [Depth-First Search Algorithm](/algorithm/depth-first-search-algorithm.md)
 - [Prefix Sum Algorithm](/algorithm/prefix-sum-algorithm.md)
 - [Implementation Algorithm](/algorithm/implementation-algorithm.md)
+
 ## browser
 - [Checking the Console Log in Mobile Chrome](/browser/checking-the-console-log-in-mobile-chrome.md)
 - [Page Visibility API](/browser/page-visibility-api.md)
@@ -18,6 +19,7 @@
 
 ## database
 - [Basic Of Partitioning](/database/basic-of-%20partitioning.md)
+
 ## editor
 - [git shortcuts command in zsh](/editor/git-shortcuts-command-in-zsh.md)
 ## git
