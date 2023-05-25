@@ -18,6 +18,8 @@
 
 ## database
 - [Basic Of Partitioning](/database/basic-of-%20partitioning.md)
+## editor
+- [git shortcuts command in zsh](/editor/git-shortcuts-command-in-zsh.md)
 ## git
 - [Checkkout Previous Branch](/git/checkout-previous-branch.md)
 - [How to initialize all changes](/git/how-to-initialize-all-changes.md)
