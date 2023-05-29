@@ -53,6 +53,7 @@
 - [Overuse of useMemo and useCallback](/react/overuse-of-useMemo-and-useCallback.md)
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 ## rust
+- [Comments](/rust/comments.md)
 - [Data Types](/rust/data-types.md)
 - [Functions](/rust/functions.md)
 - [Get Started](/rust/get-started.md)
