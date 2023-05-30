@@ -57,6 +57,7 @@
 - [Data Types](/rust/data-types.md)
 - [Functions](/rust/functions.md)
 - [Get Started](/rust/get-started.md)
+- [Isize](/rust/isize.md)
 - [Variables and Mutability](/rust/variables-and-mutability.md)
 ## tauri
 - [tauri](/tauri/about-tauri.md)
