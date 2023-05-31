@@ -54,6 +54,7 @@
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 ## rust
 - [Comments](/rust/comments.md)
+- [Control Flow](/rust/control-flow.md)
 - [Data Types](/rust/data-types.md)
 - [Functions](/rust/functions.md)
 - [Get Started](/rust/get-started.md)
