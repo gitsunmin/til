@@ -53,13 +53,14 @@
 - [Overuse of useMemo and useCallback](/react/overuse-of-useMemo-and-useCallback.md)
 - [The difference between useEffect and useLayoutEffect](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 ## rust
-- [Comments](/rust/comments.md)
-- [Control Flow](/rust/control-flow.md)
-- [Data Types](/rust/data-types.md)
-- [Functions](/rust/functions.md)
-- [Get Started](/rust/get-started.md)
-- [Isize](/rust/isize.md)
-- [Variables and Mutability](/rust/variables-and-mutability.md)
+- [Basic](/rust/basic/index.md)
+    - [1. Get Started](/rust/basic/1.get_started/index.md)
+    - [2. Common Programming Concepts](/rust/basic/2.common_programming_concepts/)
+        - [2.1 Variables and Mutability](/rust/basic/2.common_programming_concepts/2.1-variables-and-mutability.md)
+        - [2.2 Data Types](/rust/basic/2.common_programming_concepts/2.2-data-types.md)
+        - [2.3 Functions](/rust/basic/2.common_programming_concepts/2.3-functions.md)
+        - [2.4 Comments](/rust/basic/2.common_programming_concepts/2.4-comments.md)
+        - [2.5 Control Flow](/rust/basic/2.common_programming_concepts/2.5-control-flow.md)
 ## software-engineering
 - [Software Development Principles](/software_engineering/software-development-principles.md)
 ## tauri
