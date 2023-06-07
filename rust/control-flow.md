@@ -1,7 +1,7 @@
 # Control Flow
 - Reference:
     The Rust Programming Language (Book)   
-    [Control Flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html)
+    [Common Programming Concepts/Control Flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html)
 
 조건이 참인지 여부에 따라 일부 코드를 실행하고 조건이 참일 때 일부 코드를 반복적으로 실행하는 기능은 대부분의 프로그래밍 언어에서 기본 구성 요소입니다. Rust 코드의 실행 흐름을 제어할 수 있는 가장 일반적인 구조는 if 표현식과 loop입니다.
 

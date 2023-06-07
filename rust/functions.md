@@ -1,4 +1,8 @@
 # Functions
+- Reference:
+    The Rust Programming Language (Book)   
+    [Common Programming Concepts/Functions](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html)
+
 Rust에서 함수는 매우 중요하고, Rust가 시작되는 포인트 또한 `main`함수로 부터 시작이 되어집니다. 이 함수는 `fn`이라는 키워드로 선언할 수 있으며, Rust에서는 함수명을 짓는 네이밍 규칙을 snake case로 사용하고 있습니다.
 
 ```rust

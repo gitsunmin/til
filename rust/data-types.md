@@ -1,4 +1,7 @@
 # Data Types
+- Reference:
+    The Rust Programming Language (Book)   
+    [Common Programming Concepts/Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html)
 
 Rust는 정적으로 타입이 지정된 언어이므로 컴파일러가 컴파일 하는 시점에 모든 변수의 타입을 알고 있어야 합니다. 만약 타입을 지정하지 않는다면, 컴파일 에러를 뱉어냅니다.
 

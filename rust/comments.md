@@ -1,4 +1,8 @@
 # Comments
+- Reference:
+    The Rust Programming Language (Book)   
+    [Common Programming Concepts/Comments](https://doc.rust-lang.org/book/ch03-04-comments.html)
+
 모든 프로그래머는 코드를 이해하기 쉽게 만들기 위해 노력하지만 때로는 추가적인 설명이 필요할 때가 있습니다. 이러한 경우 프로그래머는 소스 코드에 컴파일러는 무시하지만 소스 코드를 읽는 사람들이 유용하다고 생각할 수 있는 주석을 남깁니다.
 
 ```rust

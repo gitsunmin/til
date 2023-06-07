@@ -1,5 +1,7 @@
 # Get Started
-
+- Reference:
+    The Rust Programming Language (Book)   
+    [Getting Started](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
 ## What is the rust
 
 Rust는 시스템 프로그래밍 언어로, 메모리 안전성, 동시성, 성능에 중점을 두고 설계되었습니다. Mozilla Research에서 처음 개발되었으며, 그 이후로 많은 커뮤니티 참여를 받아 왔습니다. Rust는 가비지 컬렉션 없이도 메모리 안전성을 달성하려는 특이한 접근 방식을 취하고 있습니다. 이는 프로그래머가 메모리 관리를 수동으로 제어하면서도 버그 및 보안 문제를 최소화하는 데 도움이 됩니다.
