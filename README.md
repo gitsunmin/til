@@ -60,6 +60,8 @@
 - [Get Started](/rust/get-started.md)
 - [Isize](/rust/isize.md)
 - [Variables and Mutability](/rust/variables-and-mutability.md)
+## software-engineering
+- [Software Development Principles](/software_engineering/software-development-principles.md)
 ## tauri
 - [tauri](/tauri/about-tauri.md)
 ## typescript
