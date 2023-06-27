@@ -72,13 +72,6 @@
 ## rust
 
 - [Basic](/rust/basic/index.md)
-  - [1. Get Started](/rust/basic/1.get_started/index.md)
-  - [2. Common Programming Concepts](/rust/basic/2.common_programming_concepts/)
-    - [2.1 Variables and Mutability](/rust/basic/2.common_programming_concepts/2.1-variables-and-mutability.md)
-    - [2.2 Data Types](/rust/basic/2.common_programming_concepts/2.2-data-types.md)
-    - [2.3 Functions](/rust/basic/2.common_programming_concepts/2.3-functions.md)
-    - [2.4 Comments](/rust/basic/2.common_programming_concepts/2.4-comments.md)
-    - [2.5 Control Flow](/rust/basic/2.common_programming_concepts/2.5-control-flow.md)
 
 ## software-engineering
 

@@ -1,1 +1,1 @@
-- basic 폴더의 개념들은 대부분 [The Rust Programming Language (Book)](https://doc.rust-lang.org/book/title-page.html) 책을 읽고 작성한 내용입니다.
+I wrote down what I studied [here](https://github.com/gitsunmin/learning-rust).
