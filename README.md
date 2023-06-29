@@ -35,6 +35,7 @@
 ## git
 
 - [Checkkout Previous Branch](/git/checkout-previous-branch.md)
+- [Git Bisect Command](/git/git-bisect-command.md)
 - [How to initialize all changes](/git/how-to-initialize-all-changes.md)
 - [Resurrection of commit](/git/resurrection-of-commit.md)
 - [Key commit message abbreviations](/git/key-commit-message-abbreviations.md)
