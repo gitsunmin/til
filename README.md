@@ -40,6 +40,7 @@
 - [Resurrection of commit](/git/resurrection-of-commit.md)
 - [Key commit message abbreviations](/git/key-commit-message-abbreviations.md)
 - [Import Only One File From A Stash](/git/import-only-one-file-from-a-stash.md)
+- [submodule](/git/submodule.md)
 
 ## html
 
