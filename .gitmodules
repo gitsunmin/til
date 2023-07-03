@@ -1,0 +1,3 @@
+[submodule "rust/leaning-rust"]
+	path = rust/leaning-rust
+	url = https://github.com/gitsunmin/learning-rust.git
