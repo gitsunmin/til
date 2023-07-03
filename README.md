@@ -72,7 +72,7 @@
 
 ## rust
 
-- [Basic](/rust/basic/index.md)
+- [Learning Rust](https://github.com/gitsunmin/learning-rust/tree/eb5567ec70b8379ea8f364431ea65811501d9357)
 
 ## software-engineering
 
