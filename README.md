@@ -6,6 +6,10 @@
 - [Prefix Sum Algorithm](/algorithm/prefix-sum-algorithm.md)
 - [Implementation Algorithm](/algorithm/implementation-algorithm.md)
 
+## book-notes
+
+- [Mostly Adequate Guide to Functional Programming](/book-notes/mostly-adequate-guide-to-functional-programming.md)
+
 ## browser
 
 - [Checking the Console Log in Mobile Chrome](/browser/checking-the-console-log-in-mobile-chrome.md)
