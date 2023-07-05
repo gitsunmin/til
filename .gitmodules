@@ -1,3 +1,6 @@
-[submodule "rust/leaning-rust"]
-	path = rust/leaning-rust
+[submodule "@thers/book-notes"]
+	path = @thers/book-notes
+	url = https://github.com/gitsunmin/book-notes.git
+[submodule "@thers/rust"]
+	path = @thers/rust
 	url = https://github.com/gitsunmin/learning-rust.git

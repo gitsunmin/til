@@ -7,8 +7,7 @@
 - [Implementation Algorithm](/algorithm/implementation-algorithm.md)
 
 ## book-notes
-
-- [Mostly Adequate Guide to Functional Programming](/book-notes/mostly-adequate-guide-to-functional-programming.md)
+- [ropo](https://github.com/gitsunmin/book-notes.git)
 
 ## browser
 
