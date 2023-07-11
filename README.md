@@ -38,6 +38,7 @@
 ## git
 
 - [Checkkout Previous Branch](/git/checkout-previous-branch.md)
+- [Creating a Branch from a Commit](/git/creating-branch-from-commit.md)
 - [Git Bisect Command](/git/git-bisect-command.md)
 - [How to initialize all changes](/git/how-to-initialize-all-changes.md)
 - [Resurrection of commit](/git/resurrection-of-commit.md)
