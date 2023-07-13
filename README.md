@@ -7,6 +7,7 @@
 - [Implementation Algorithm](/algorithm/implementation-algorithm.md)
 
 ## book-notes
+
 - [ropo](https://github.com/gitsunmin/book-notes.git)
 
 ## browser
@@ -94,6 +95,7 @@
 - [Import type only](/typescript/import-type-only.md)
 - [Error handling with typescript](/typescript/error-handling-with-typescript.md)
 - [Keyword satisfies to upport safe upcast](/typescript/keyword-satisfies-to-support-safe-upcast.md)
+- [Tagged Union Type](/typescript/tagged-union-type.md)
 - [ts-pattern](/typescript/ts-pattern.md)
 - [Typescript infer keyword](/typescript/typescript-infer-keyword.md)
 
