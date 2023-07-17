@@ -31,6 +31,9 @@
 
 - [Basic Of Partitioning](/database/basic-of-%20partitioning.md)
 
+## function programing
+- [Algebraic data type](/functional_programing/algebraic-data-type.md)
+
 ## editor
 
 - [git shortcuts command in zsh](/editor/git-shortcuts-command-in-zsh.md)
