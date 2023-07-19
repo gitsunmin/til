@@ -3,7 +3,7 @@ Dart 공식 문서를 읽으면서, Typescript나 Javascript만 사용한 나에
 
 ## Null safety
 
-Dart에서는 Null 역참조 오류를 Run Time이 아닌, Compile Time에서 확인할 수 있습니다. 그렇기 때문에, 실재 빌드가 된 다음인 Run time에서 마음껏 사용이 가능합니다.
+Dart에서는 Null 역참조 오류를 run-time이 아닌, compile-time에서 확인할 수 있습니다. 그렇기 때문에, 빌드가 되었다면 run-time에서 안전하게 변수를 사용할 수 있습니다.
 
 아래와 같이 참고할 수 있는 3가지 성질이 있습니다.
 
@@ -15,14 +15,12 @@ String? name  // Nullable type. Can be `null` or string.
 String name   // Non-nullable type. Cannot be `null` but can be string.
 ```
 
-2. 변수를 사용하기 전에 초기화해야 합니다. 널 가능 변수는 기본값이 널이므로 기본적으로 초기화됩니다. Dart는 초기 값을 널이 아닌 유형으로 설정하지 않습니다. 초기값을 설정하도록 강제합니다.
-3. 널 가능 타입의 표현식에서는 프로퍼티에 액세스하거나 메서드를 호출할 수 없습니다. (`hashCode`나 `toString()`과 같이 널이 지원하는 속성이나 메서드인 경우에도 동일한 예외가 적용됩니다.)
-
-그리고, Dart는 컴파일 타임에서 Null Safety를 보장하기 때문에, 안전하게 사용할 수 있습니다.
+1. 변수를 사용하기 전에 초기화해야 합니다. 널 가능 변수는 기본값이 널이므로 기본적으로 초기화됩니다. Dart는 초기 값을 널이 아닌 유형으로 설정하지 않습니다. 초기값을 설정하도록 강제합니다.
+2. 널 가능 타입의 표현식에서는 프로퍼티에 액세스하거나 메서드를 호출할 수 없습니다. (`hashCode`나 `toString()`과 같이 널이 지원하는 속성이나 메서드인 경우에도 동일한 예외가 적용됩니다.)
 
 ## Late Variables
 
-말 그대로 느리게 변수를 초기화하는 방식으로 변수를 선언하는 것입니다.
+느리게 변수를 초기화하는 방식으로 변수를 선언하는 것입니다.
 
 ```dart
 late String description;
@@ -33,9 +31,9 @@ void main() {
 }
 ```
 
-(만약에 `description` 변수를 초기화 하지 않는다면, runtime 에러가 발생합니다.)
+(만약에 `description` 변수를 초기화 하지 않는다면, runtime환경에서 에러가 발생합니다.)
 
-이 기능은 아래와 같이 사용하지 않을 수도 있는 변수를 선언할 때에 유용하게 동작할 수 있는데, 아래의 `readThermometer` 함수는 `temperature` 변수가 사용되지 않으면, 실행되지 않도록 설계되었습니다.
+이 기능은 아래와 같이 사용하지 않을 수도 있는 변수를 선언할 때에 유용하게 동작할 수 있는데, 아래의 `readThermometer` 함수는 `temperature` 변수가 사용 되지 않으면, 실행되지 않도록 설계되었습니다.
 
 ```dart
 // This is the program's only call to readThermometer().
@@ -65,7 +63,6 @@ late String temperature = readThermometer(); // Lazily initialized.
 
 ## Metadata
 
-- annotation 문법임.
 - @Deprecated
 - @deprecated
 - @override
@@ -103,10 +100,20 @@ late String temperature = readThermometer(); // Lazily initialized.
 
 - `int`와 `double`은 모두 `num` Type에 하위 개념.
 - int
-    - Native에서는 -263 ~ 261
-    - Web에서는 -253 ~ 252
+    - Native에서는
+    
+    $$
+    -2^{63} ~~to~~ 2^{63} - 1
+    $$
+    
+    - Web에서는
+    
+    $$
+    -2^{53} ~~to~~ 2^{53} - 1
+    $$
+    
 - double
-    - 소수점을 표횬하기 위한 Type
+    - 소수점을 표현하기 위한 Type
 
 ### Strings
 
@@ -158,6 +165,61 @@ void main() {
 }
 ```
 
+## Collections
+
+- Map, List, Set 등 다른 Collection에서는 동등 비교를 Record 처럼 하지 않습니다.
+
+```dart
+({ int a, String b }) r1 = ( a: 1, b: 'ss' );
+({ int a, String b }) r2 = ( a: 1, b: 'ss' );
+
+Map<String, int> m1 = { 'a': 123, 'b': 234 };
+Map<String, int> m2 = { 'a': 123, 'b': 234 };
+
+List<int> l1 = [1,2,3,4];
+List<int> l2 = [1,2,3,4];
+
+Set<int> s1 = {1,2,3,4};
+Set<int> s2 = {1,2,3,4};
+
+void main() {
+  print(r1 == r2); // True
+  print(m1 == m2); // False
+  print(l1 == l2); // False
+  print(s1 == s2); // False
+}
+```
+
+- destructuring을 하게되면, 아래와 같은 것도 가능합니다.
+
+```dart
+Map<String, int> hist = {
+  'a': 23,
+  'b': 100,
+};
+
+for (var MapEntry(key: key, value: count) in hist.entries) {
+  print('$key occurred $count times');
+	// a occurred 23 times
+  // b occurred 100 times
+}
+```
+
+그리고 다음과 같이 Key를 축약하는 것도 가능합니다. (`key: key` → `:key`)
+
+```dart
+for (var MapEntry(:key, value: count) in hist.entries)
+```
+
+### Dynamic
+
+아래와 같이 사용 가능한 Dynamic Type을 제공함. (마치 javascript 같은..)
+
+```dart
+List<dynamic> l1 = [1,2,'3', {2}];
+  print(l1); // [1, 2, 3, {2}]
+```
+
 ### Control-flow operators
 
 Control-flow operators은 각 Collection을 정의할 때에 conrtol-flow를 사용할 수 있도록 제공하는 문법입니다.
@@ -175,4 +237,127 @@ var listOfInts = [1, 2, 3, 4];
 var listOfStrings = ['#0', for (var i in listOfInts) '#${i}'];
 print(listOfStrings);
 // [#0, #1, #2, #3, #4]
+```
+
+---
+
+## Typedefs
+
+```dart
+typedef IntList = List<int>;
+IntList il = [1, 2, 3];
+```
+
+이렇게 정의합니다.
+
+`is` keyword를 사용하여 아래와 같이 확인하는 것도 가능합니다.
+
+```dart
+typedef Compare<T> = int Function(T a, T b);
+
+int sort(int a, int b) => a - b;
+
+void main() {
+  assert(sort is Compare<int>); // True!
+}
+```
+
+## Type System
+
+Super Class와 Sub Class가 있을 때, 아래와 같은 규칙이 적용됩니다.
+
+- Super Class, Method의 Return Type은 Sub Class에서 Override할 경우에 Super Class의 Method의 Return Type과 같거나 하위인 Type이 적용되어야 합니다.
+- Super Class, Methods의 Parameter Type은 Sub Class에서 Override할 경우에 Super Class의 Method의 Parameter Type과 같거나 상위인 Type이 적용되어야 합니다.
+- 변수를 생성할 때에, Type의 할당은 Sub Class에 Super Class의 Type을 넣을 수는 있지만, 반대는 불가능합니다.
+
+## Patterns
+
+dart에서는 Pattern matching을 `switch` 문으로 제공을 하는데, 아래와 같은 Pattern을 제공합니다.
+
+### Logical-or
+
+```dart
+var isPrimary = switch (color) {
+  Color.red || Color.yellow || Color.blue => true,
+  _ => false
+};
+```
+
+### Logical-and
+
+```dart
+var isPrimary = switch (color) {
+  Color.red && Color.yellow && Color.blue => true,
+  _ => false
+};
+```
+
+### **Relational**
+
+```dart
+String asciiCharType(int char) {
+  const space = 32;
+  const zero = 48;
+  const nine = 57;
+
+  return switch (char) {
+    < space => 'control',
+    == space => 'space',
+    > space && < zero => 'punctuation',
+    >= zero && <= nine => 'digit',
+    _ => ''
+  };
+}
+
+void main() {
+  print(asciiCharType(40)); // punctuation
+}
+```
+
+### Null-check
+
+```dart
+void main() {
+  String? maybeString = 'my name is gitunmin';
+  switch (maybeString) {
+    case var s?:
+      print('s: $s');
+    case null:
+      print('this is the null');
+    case _:
+      print('wildcard');
+  }
+}
+```
+
+- 위와 같은 경우에는 `s: my name is gitsunmin` 으로 로그가 찍히고, maybeString이 `null` 인 경우에는 `this is the null` 이 로그에 찍힘
+- `case var s?` vs `case var s`
+    - `?` keyword를 붙이지 않으면, `null`인 경우에도 첫 번째 `case`에 매칭됩니다.
+
+### Null-assert
+
+아래와 같이 사용하게 되면, `var name`이 항상 null이 아님을 보증할 수 있습니다. 만약 null이라면 runtime 에러가 발생합니다.
+
+```dart
+void main() {
+  List<String?> row = ['user', null];
+
+  switch (row) {
+    case ['user', var name!]:
+      print('user Name');
+    default:
+      print('wildcard');
+  }
+}
+```
+
+### Rest element
+```dart
+var [a, b, ..., c, d] = [1, 2, 3, 4, 5, 6, 7];
+// Prints "1 2 6 7".
+print('$a $b $c $d');
+
+var [a, b, ...rest, c, d] = [1, 2, 3, 4, 5, 6, 7];
+// Prints "1 2 [3, 4, 5] 6 7".
+print('$a $b $rest $c $d');
 ```
