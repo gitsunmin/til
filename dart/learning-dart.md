@@ -361,3 +361,61 @@ var [a, b, ...rest, c, d] = [1, 2, 3, 4, 5, 6, 7];
 // Prints "1 2 [3, 4, 5] 6 7".
 print('$a $b $rest $c $d');
 ```
+
+## Functions
+
+```dart
+
+// arrow function
+String ping() => 'pong';
+
+void enabledFlags({bool? bold, required bool hidden, bool error = false}) {
+  print('bold: $bold, hidden: $hidden, error: $error');
+}
+
+// function as first-class object
+var loudify = (String message) => '!!!${message.toUpperCase()}!!!';
+
+void main() {
+  // arrow function
+  print('ping -> ${ping()}'); // ping -> pong
+  // error가 기본값으로 채워짐
+  enabledFlags(bold: true, hidden: false); // bold: true, hidden: false, error: false
+  // bold가 null로 채워짐
+  enabledFlags(hidden: true); // bold: null, hidden: true, error: false
+  // error에 값을 할당함.
+  enabledFlags(hidden: false, error: true); // bold: null, hidden: false, error: true
+  // required 값이 채워지지 않으면 에러가 발생함.
+  enabledFlags(bold: true); // ! Error: Required named parameter 'hidden' must be provided.
+
+	print('${loudify('퇴근하고싶다')}'); // !!!퇴근하고싶다!!!
+}
+```
+
+- return 하지 않는 Function은 null을 반환합니다.
+
+```
+foo() {}
+
+assert(foo() == null);
+```
+
+### Generators
+
+- Synchronous generator는 Iterable 객체를 반환하는 함수입니다.
+
+```dart
+Iterable<int> naturalsTo(int n) sync* {
+  int k = 0;
+  while (k < n) yield k++;
+}
+```
+
+- Asynchronous henerator는 Steam 객체를 반환하는 함수입니다.
+
+```dart
+Stream<int> asynchronousNaturalsTo(int n) async* {
+  int k = 0;
+  while (k < n) yield k++;
+}
+```
