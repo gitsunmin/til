@@ -38,6 +38,7 @@
 
 ## editor
 
+- [Auto nvm use in zsh](/editor/auto-nvm-use-in-zsh.md)
 - [git shortcuts command in zsh](/editor/git-shortcuts-command-in-zsh.md)
 - [Learn-vim](/editor/learn-vim.md)
 
