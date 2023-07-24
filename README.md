@@ -26,7 +26,7 @@
 - [learning-dart.md](/dart/learning-dart.md)
 
 ## database
-- [basic-of- partitioning.md](/database/basic-of- partitioning.md)
+- [basic-of-partitioning.md](/database/basic-of-partitioning.md)
 
 ## editor
 - [auto-nvm-use-in-zsh.md](/editor/auto-nvm-use-in-zsh.md)
