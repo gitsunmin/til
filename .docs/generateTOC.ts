@@ -1,7 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { A, S, flow, pipe } from "@mobily/ts-belt";
+import { A, F, S, flow, pipe } from "@mobily/ts-belt";
+import { match } from "ts-pattern";
 
 const TARGET_FILE = "README.md";
 
@@ -22,6 +23,8 @@ const EXCLUDED_FILES = new Set([
   TARGET_FILE,
 ]);
 
+const SUB_MODULES_DIRECTORIS = new Set(["@thers"]);
+
 const readDirectory = (path: string) =>
   fs.readdirSync(path, { encoding: "utf-8" });
 
@@ -34,13 +37,22 @@ const getCategories = (root: string) =>
   );
 
 const makeContent = (category: (string | string[])[]) =>
-  `\n## ${A.head(category)}\n${pipe(
-    category,
-    A.flat,
-    A.filter((name) => name !== A.head(category)),
-    A.map((title) => `- [${title}](/${A.head(category)}/${title})\n`),
-    A.join("")
-  )}`;
+  match(category)
+    .when(
+      ([title]) => SUB_MODULES_DIRECTORIS.has(title as string),
+      ([title]) => `\n## ${title}\n- [here](/${title})`
+    )
+    .otherwise(
+      F.always(
+        `\n## ${A.head(category)}\n${pipe(
+          category,
+          A.flat,
+          A.filter((name) => name !== A.head(category)),
+          A.map((title) => `- [${title}](/${A.head(category)}/${title})\n`),
+          A.join("")
+        )}`
+      )
+    );
 
 const makeTitle = (title: string) => `# ${title}`;
 

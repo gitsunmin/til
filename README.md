@@ -1,8 +1,6 @@
 # Table Of Contents
 ## @thers
-- [book-notes](/@thers/book-notes)
-- [rust](/@thers/rust)
-
+- [here](/@thers)
 ## algorithm
 - [depth-first-search-algorithm.md](/algorithm/depth-first-search-algorithm.md)
 - [implementation-algorithm.md](/algorithm/implementation-algorithm.md)
