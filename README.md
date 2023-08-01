@@ -1,9 +1,4 @@
 # Table Of Contents
-## .husky
-- [docs](/.husky/docs)
-- [pre-commit](/.husky/pre-commit)
-- [pre-commit.ts](/.husky/pre-commit.ts)
-
 ## @thers
 - [here](/@thers)
 ## algorithm

@@ -14,6 +14,8 @@ export const EXCLUDED_FILES = new Set([
   ".git",
   ".gitignore",
   ".gitmodules",
+  /** HUSKY */
+  ".husky",
   /** TARGET */
   TARGET_FILE,
 ]);
