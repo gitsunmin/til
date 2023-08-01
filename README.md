@@ -1,4 +1,9 @@
 # Table Of Contents
+## .husky
+- [docs](/.husky/docs)
+- [pre-commit](/.husky/pre-commit)
+- [pre-commit.ts](/.husky/pre-commit.ts)
+
 ## @thers
 - [here](/@thers)
 ## algorithm
@@ -17,6 +22,7 @@
 
 ## css
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
+- [css-functions.md](/css/css-functions.md)
 - [object-fit.md](/css/object-fit.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 
