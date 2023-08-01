@@ -12,6 +12,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["./.docs/**/*.ts"],
+  "include": ["./.husky/**/*.ts"],
   "exclude": ["node_modules"]
 }
