@@ -1,6 +1,6 @@
 import * as path from "path";
 
-import { pipe, flow, F, A } from "@mobily/ts-belt";
+import { pipe, flow, F, A, S } from "@mobily/ts-belt";
 import { match } from "ts-pattern";
 import { EXCLUDED_FILES, ROOT, SUB_MODULES_DIRECTORIS } from "./constant";
 import { readDirectory } from "./file";
@@ -12,7 +12,7 @@ export const makeCategories = (directory: string[]) =>
     A.map(flow((dir) => [dir, readDirectory(path.join(ROOT, dir))]))
   );
 
-export const makeContent = (category: (string | string[])[]) =>
+const makeContent = (category: (string | string[])[]) =>
   match(category)
     .when(
       ([title]) => SUB_MODULES_DIRECTORIS.has(title as string),
@@ -30,4 +30,10 @@ export const makeContent = (category: (string | string[])[]) =>
       )
     );
 
-export const makeTitle = (title: string) => `# ${title}`;
+const makeTitle = (title: string) => `# ${title}`;
+
+export const makeTOC = (categories: readonly (string | string[])[][]) =>
+  S.concat(
+    makeTitle("Table Of Contents"),
+    pipe(categories, A.map(makeContent), A.join(""))
+  );
