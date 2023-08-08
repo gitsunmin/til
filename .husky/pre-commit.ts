@@ -1,3 +1,3 @@
-import * as DOCS from './docs';
+import * as DOCS from "./docs";
 
 DOCS.main();
