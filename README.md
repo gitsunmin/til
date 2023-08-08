@@ -19,6 +19,7 @@
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
 - [css-functions.md](/css/css-functions.md)
 - [object-fit.md](/css/object-fit.md)
+- [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 
 ## dart
