@@ -1,0 +1,27 @@
+# DOCS
+
+.docs
+
+# TS
+
+tsconfig.json
+
+# PACKAGES
+
+package.json
+package-lock.json
+node_modules
+
+# GIT
+
+.git
+.gitignore
+.gitmodules
+
+# HUSKY
+
+.husky
+
+# TARGET
+
+README.md

@@ -1,24 +1,6 @@
-
 export const TARGET_FILE = "README.md";
 
-export const EXCLUDED_FILES = new Set([
-  /** DOCS */
-  ".docs",
-  /** TS */
-  "tsconfig.json",
-  /** PACKAGES */
-  "package.json",
-  "package-lock.json",
-  "node_modules",
-  /** GIT */
-  ".git",
-  ".gitignore",
-  ".gitmodules",
-  /** HUSKY */
-  ".husky",
-  /** TARGET */
-  TARGET_FILE,
-]);
+export const DOCS_IGNORE_PATH = ".husky/docs/.docsignore";
 
 export const SUB_MODULES_DIRECTORIS = new Set(["@thers"]);
 

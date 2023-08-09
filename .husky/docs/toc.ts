@@ -2,13 +2,13 @@ import * as path from "path";
 
 import { pipe, flow, F, A, S } from "@mobily/ts-belt";
 import { match } from "ts-pattern";
-import { EXCLUDED_FILES, ROOT, SUB_MODULES_DIRECTORIS } from "./constant";
+
+import { ROOT, SUB_MODULES_DIRECTORIS } from "./constant";
 import { readDirectory } from "./file";
 
 export const makeCategories = (directory: string[]) =>
   pipe(
     directory,
-    A.filter((dir) => !EXCLUDED_FILES.has(dir)),
     A.map(flow((dir) => [dir, readDirectory(path.join(ROOT, dir))]))
   );
 
