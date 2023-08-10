@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { ROOT } from "./constant";
+import DocsConfig from "./docs.config";
 
 export const readDirectory = (path: string) =>
   fs.readdirSync(path, { encoding: "utf-8" });
@@ -9,4 +9,4 @@ export const readDirectory = (path: string) =>
 export const readFile = (target: string) => fs.readFileSync(target, "utf-8");
 
 export const writeFile = (target: string) => (contents: string) =>
-  fs.writeFileSync(path.join(ROOT, target), contents);
+  fs.writeFileSync(path.join(DocsConfig.makeOption.root, target), contents);

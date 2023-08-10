@@ -3,19 +3,24 @@ import * as path from "path";
 import { pipe, flow, F, A, S } from "@mobily/ts-belt";
 import { match } from "ts-pattern";
 
-import { ROOT, SUB_MODULES_DIRECTORIS } from "./constant";
+import DocsConfig from "./docs.config";
 import { readDirectory } from "./file";
 
 export const makeCategories = (directory: string[]) =>
   pipe(
     directory,
-    A.map(flow((dir) => [dir, readDirectory(path.join(ROOT, dir))]))
+    A.map(
+      flow((dir) => [
+        dir,
+        readDirectory(path.join(DocsConfig.makeOption.root, dir)),
+      ])
+    )
   );
 
 const makeContent = (category: (string | string[])[]) =>
   match(category)
     .when(
-      ([title]) => SUB_MODULES_DIRECTORIS.has(title as string),
+      ([title]) => DocsConfig.makeOption.subModules.includes(title as string),
       ([title]) => `\n## ${title}\n- [here](/${title})`
     )
     .otherwise(
