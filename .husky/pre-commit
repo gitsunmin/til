@@ -1,3 +1,2 @@
 #!/bin/zsh
-echo "Running pre-commit hook"
 npx ts-node .husky/pre-commit.ts
