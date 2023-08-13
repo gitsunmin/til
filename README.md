@@ -91,3 +91,4 @@
 
 ## web
 - [a11y.md](/web/a11y.md)
+- [web-component.md](/web/web-component.md)
