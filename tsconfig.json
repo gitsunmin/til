@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "ESNext",
     "strict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
@@ -10,8 +10,16 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+
+    "types": ["bun-types"],
+    "lib": ["esnext"],
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@docs/*": ["./.run/docs/*"]
+    }
   },
-  "include": ["./.husky/**/*.ts"],
+  "include": [".husky/**/*.ts", ".run/**/*.ts"],
   "exclude": ["node_modules"]
 }

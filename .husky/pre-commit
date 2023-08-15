@@ -1,2 +1,2 @@
 #!/bin/zsh
-bun .husky/pre-commit.ts
+bun run:pre-commit

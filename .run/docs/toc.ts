@@ -3,7 +3,7 @@ import * as path from "path";
 import { pipe, flow, F, A, S } from "@mobily/ts-belt";
 import { match } from "ts-pattern";
 
-import DocsConfig from "./docs.config";
+import DocsConfig from "./docs.config.js";
 import { readDirectory } from "./file";
 
 export const makeCategories = (directory: string[]) =>

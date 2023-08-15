@@ -1,4 +1,3 @@
-import DOCS from "./docs";
-console.time("bun");
-DOCS();
-console.timeEnd("bun");
+import DOCS from "@docs/index.js";
+
+DOCS.create();

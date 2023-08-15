@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import DocsConfig from "./docs.config";
+import DocsConfig from "./docs.config.js";
 
 export const readDirectory = (path: string) =>
   fs.readdirSync(path, { encoding: "utf-8" });
