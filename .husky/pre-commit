@@ -1,2 +1,2 @@
 #!/bin/zsh
-npx ts-node .husky/pre-commit.ts
+bun .husky/pre-commit.ts

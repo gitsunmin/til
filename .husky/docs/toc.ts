@@ -9,6 +9,7 @@ import { readDirectory } from "./file";
 export const makeCategories = (directory: string[]) =>
   pipe(
     directory,
+    A.sort((cw, nw) => cw.localeCompare(nw)),
     A.map(
       flow((dir) => [
         dir,
@@ -29,6 +30,7 @@ const makeContent = (category: (string | string[])[]) =>
           category,
           A.flat,
           A.filter((name) => name !== A.head(category)),
+          A.sort((cw, nw) => cw.localeCompare(nw)),
           A.map((title) => `- [${title}](/${A.head(category)}/${title})\n`),
           A.join("")
         )}`
