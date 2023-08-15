@@ -2,6 +2,7 @@
 ## @thers
 - [here](/@thers)
 ## algorithm
+- [a.md](/algorithm/a.md)
 - [depth-first-search-algorithm.md](/algorithm/depth-first-search-algorithm.md)
 - [implementation-algorithm.md](/algorithm/implementation-algorithm.md)
 - [prefix-sum-algorithm.md](/algorithm/prefix-sum-algorithm.md)
@@ -32,6 +33,8 @@
 - [auto-nvm-use-in-zsh.md](/editor/auto-nvm-use-in-zsh.md)
 - [git-shortcuts-command-in-zsh.md](/editor/git-shortcuts-command-in-zsh.md)
 - [learn-vim.md](/editor/learn-vim.md)
+
+## flutter
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
