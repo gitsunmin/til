@@ -33,6 +33,9 @@
 - [git-shortcuts-command-in-zsh.md](/editor/git-shortcuts-command-in-zsh.md)
 - [learn-vim.md](/editor/learn-vim.md)
 
+## flutter
+- [final-and-const.md](/flutter/final-and-const.md)
+
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
 
