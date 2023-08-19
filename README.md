@@ -21,6 +21,7 @@
 - [object-fit.md](/css/object-fit.md)
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
+- [tailwind-css.md](/css/tailwind-css.md)
 
 ## dart
 - [learning-dart.md](/dart/learning-dart.md)
