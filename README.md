@@ -95,4 +95,5 @@
 
 ## web
 - [a11y.md](/web/a11y.md)
+- [view-transition-api.md](/web/view-transition-api.md)
 - [web-component.md](/web/web-component.md)
