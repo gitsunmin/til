@@ -95,4 +95,5 @@
 
 ## web
 - [a11y.md](/web/a11y.md)
+- [designMode.md](/web/designMode.md)
 - [web-component.md](/web/web-component.md)
