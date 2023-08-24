@@ -36,6 +36,7 @@
 
 ## flutter
 - [final-and-const.md](/flutter/final-and-const.md)
+- [future-and-stream.md](/flutter/future-and-stream.md)
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
