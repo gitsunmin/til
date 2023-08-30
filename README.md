@@ -31,6 +31,7 @@
 
 ## editor
 - [auto-nvm-use-in-zsh.md](/editor/auto-nvm-use-in-zsh.md)
+- [autocomplete-commit-message-in-vscode-with-copilot.md](/editor/autocomplete-commit-message-in-vscode-with-copilot.md)
 - [git-shortcuts-command-in-zsh.md](/editor/git-shortcuts-command-in-zsh.md)
 - [learn-vim.md](/editor/learn-vim.md)
 
