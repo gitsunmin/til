@@ -67,6 +67,9 @@
 - [abortController.md](/network/abortController.md)
 - [DNS-domain-name-system.md](/network/DNS-domain-name-system.md)
 
+## nextjs
+- [learning-nextjs.md](/nextjs/learning-nextjs.md)
+
 ## package
 - [automatically-sink-the-node-version-using-nvmrc.md](/package/automatically-sink-the-node-version-using-nvmrc.md)
 - [basic-yarn-berry.md](/package/basic-yarn-berry.md)
