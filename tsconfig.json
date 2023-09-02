@@ -17,7 +17,8 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@docs/*": ["./.run/docs/*"]
+      "@docs/*": ["./.run/docs/*"],
+      "@git/*": ["./.run/git/*"]
     }
   },
   "include": [".husky/**/*.ts", ".run/**/*.ts"],
