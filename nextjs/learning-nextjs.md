@@ -114,17 +114,17 @@ nextjs은 같은 path에 두 개의 페이지를 랜더링 할 수 있습니다.
 
 ```shell
 └── app
-├── @dashboard
+    ├── @dashboard
+            ├── ...
+            ├── layout.tsx # UI의 레이아웃을 담당하는 파일
+            └── page.tsx # 페이지를 담당하는 파일
+    ├── @blog
+            ├── ...
+            ├── layout.tsx # UI의 레이아웃을 담당하는 파일
+            └── page.tsx # 페이지를 담당하는 파일
         ├── ...
         ├── layout.tsx # UI의 레이아웃을 담당하는 파일
         └── page.tsx # 페이지를 담당하는 파일
-├── @blog
-        ├── ...
-        ├── layout.tsx # UI의 레이아웃을 담당하는 파일
-        └── page.tsx # 페이지를 담당하는 파일
-    ├── ...
-    ├── layout.tsx # UI의 레이아웃을 담당하는 파일
-    └── page.tsx # 페이지를 담당하는 파일
 ```
 
 이렇게 구성 후에 root Layout에서 아래와 같이 사용할 수 있습니다.
@@ -155,18 +155,18 @@ export default function Layout(props: {
 
 ```shell
 └── app
-├── photo
-    ├── @modal
-        └── (..)photo
-            └── [id]
-                ├── ...
-                ├── layout.tsx # UI의 레이아웃을 담당하는 파일
-                └── page.tsx # 페이지를 담당하는 파일
-├── card
-    └── list
-        ├── ...
-        ├── layout.tsx # UI의 레이아웃을 담당하는 파일
-        └── page.tsx # 페이지를 담당하는 파일
+    ├── photo
+        ├── @modal
+            └── (..)photo
+                └── [id]
+                    ├── ...
+                    ├── layout.tsx # UI의 레이아웃을 담당하는 파일
+                    └── page.tsx # 페이지를 담당하는 파일
+    ├── card
+        └── list
+            ├── ...
+            ├── layout.tsx # UI의 레이아웃을 담당하는 파일
+            └── page.tsx # 페이지를 담당하는 파일
 ```
 
 또한, 이 (..)같은 표현은 조금 이질감이 느껴지지만,,, 받아드려야할 것 같네요. 아래와 같은 정의가 있습니다.
@@ -175,3 +175,100 @@ export default function Layout(props: {
 - (..) 바로 상위 디렉토리를 가리킵니다.
 - (..)(..) 두 단계 상위 디렉토리를 가리킵니다.
 - (...) root 디렉토리를 가리킵니다.
+
+### Route Handlers
+
+Next에서는 page를 제공하는 route 외에도 api를 제공하는 route를 생성할 수 있습니다.
+
+```shell
+└── app
+    ├── api
+        └── route.ts # <- api route
+    ├── ...
+    ├── layout.tsx
+    └── page.tsx
+```
+
+이 API는 모든 METHOD를 지원합니다. 그리고, 이 API는 다음과 같이 정의할 수 있습니다.
+
+```tsx
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const res = await fetch('https://gitsunmin.dev/...', {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await res.json();
+
+  return NextResponse.json({ data });
+}
+```
+
+fetch api를 사용하여 다른 METHOD를 사용할 수 있으며 cashing과 다른 option의 사용이 가능합니다.
+
+또 header와 cookie를 제공하는 것도 가능합니다.
+
+- cookie
+
+```tsx
+import { cookies } from 'next/headers';
+
+export async function GET(request: Request) {
+  const cookieStore = cookies();
+  const token = cookieStore.get('token');
+
+  return new Response('Hello, Next.js!', {
+    status: 200,
+    headers: { 'Set-Cookie': `token=${token.value}` },
+  });
+}
+```
+
+- header
+
+```tsx
+import { headers } from 'next/headers';
+
+export async function GET(request: Request) {
+  const headersList = headers();
+  const referer = headersList.get('referer');
+
+  return new Response('Hello, Next.js!', {
+    status: 200,
+    headers: { referer: referer },
+  });
+}
+```
+
+redirect도 가능합니다.
+
+```tsx
+import { redirect } from 'next/navigation';
+
+export async function GET(request: Request) {
+  redirect('https://nextjs.org/');
+}
+```
+
+이 api는 아래와 route와 비슷하게 아래 처럼 사용 가능합니다.
+
+- app/items/[slug]/route.js
+  - 요청: /items/a
+  - { slug: 'a' }
+- app/items/[slug]/route.js
+  - 요철: /items/b
+  - { slug: 'b' }
+- app/items/[slug]/route.js
+  - 요청: /items/c
+  - { slug: 'c' }
+
+```tsx
+export async function GET(
+  request: Request,
+  { params }: { params: { slug: string } }
+) {
+  const slug = params.slug; // 'a', 'b', or 'c'
+}
+```
