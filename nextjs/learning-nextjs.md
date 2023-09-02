@@ -1,4 +1,4 @@
-# Learning Nest js
+# Learning Next js
 
 ## install nextjs
 
