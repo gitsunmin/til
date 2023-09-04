@@ -1,4 +1,7 @@
 # Table Of Contents
+## .vscode
+- [settings.json](/.vscode/settings.json)
+
 ## @thers
 - [here](/@thers)
 ## algorithm
