@@ -80,6 +80,7 @@
 ## react
 - [how-to-check-children-in-react-component.md](/react/how-to-check-children-in-react-component.md)
 - [overuse-of-useMemo-and-useCallback.md](/react/overuse-of-useMemo-and-useCallback.md)
+- [react-server-component.md](/react/react-server-component.md)
 - [the-difference-between-useEffect-and-useLayoutEffect.md](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 
 ## software_engineering
