@@ -44,6 +44,7 @@
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
+- [point-free-style.md](/functional_programing/point-free-style.md)
 
 ## git
 - [checkout-previous-branch.md](/git/checkout-previous-branch.md)
