@@ -100,6 +100,7 @@
 - [error-handling-with-typescript.md](/typescript/error-handling-with-typescript.md)
 - [import-type-only.md](/typescript/import-type-only.md)
 - [keyword-satisfies-to-support-safe-upcast.md](/typescript/keyword-satisfies-to-support-safe-upcast.md)
+- [numerical-string-type.md](/typescript/numerical-string-type.md)
 - [tagged-union-type.md](/typescript/tagged-union-type.md)
 - [ts-pattern.md](/typescript/ts-pattern.md)
 - [typescript-infer-keyword.md](/typescript/typescript-infer-keyword.md)
