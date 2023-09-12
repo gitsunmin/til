@@ -11,6 +11,9 @@
 - [page-visibility-api.md](/browser/page-visibility-api.md)
 - [view-in-html-Layer-3d.md](/browser/view-in-html-Layer-3d.md)
 
+## cli
+- [latest-unix-tools.md](/cli/latest-unix-tools.md)
+
 ## cs
 - [how-to-change-kernel-parameters.md](/cs/how-to-change-kernel-parameters.md)
 - [how-to-check-system-uptime-and-system-load.md](/cs/how-to-check-system-uptime-and-system-load.md)
