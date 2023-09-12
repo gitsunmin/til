@@ -1,7 +1,4 @@
 # Table Of Contents
-## .vscode
-- [settings.json](/.vscode/settings.json)
-
 ## @thers
 - [here](/@thers)
 ## algorithm
@@ -46,6 +43,7 @@
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
+- [patial-application.md](/functional_programing/patial-application.md)
 - [point-free-style.md](/functional_programing/point-free-style.md)
 
 ## git
