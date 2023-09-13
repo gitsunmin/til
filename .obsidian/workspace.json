@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "226f6c780cfc2497",
+        "id": "77b475bbbc9e6064",
         "type": "tabs",
         "children": [
           {
-            "id": "9322c57ac7d98998",
+            "id": "a3336d802ff4a049",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -65,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 222.5
   },
   "right": {
     "id": "b3ae91772fe15f28",
@@ -118,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "무제 파일.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -140,10 +138,17 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "b4c1387d38006b1a",
+  "active": "a3336d802ff4a049",
   "lastOpenFiles": [
-    "dart/typedef.md",
+    "무제 파일.md",
     "css/backdrop-filter.md",
-    "무제 파일.md"
+    "css/tailwind-css.md",
+    "css/replaced-elements.md",
+    "css/about-css-pseudo-class-the-empty.md",
+    "css/hsl.md",
+    "css/object-fit.md",
+    "html/new-html-element-search.md",
+    "editor/auto-nvm-use-in-zsh.md",
+    "dart/typedef.md"
   ]
 }
