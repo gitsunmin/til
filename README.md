@@ -1,4 +1,7 @@
 # Table Of Contents
+## .vscode
+- [settings.json](/.vscode/settings.json)
+
 ## @thers
 - [here](/@thers)
 ## algorithm
@@ -29,6 +32,7 @@
 
 ## dart
 - [learning-dart.md](/dart/learning-dart.md)
+- [typedef.md](/dart/typedef.md)
 
 ## database
 - [basic-of-partitioning.md](/database/basic-of-partitioning.md)
