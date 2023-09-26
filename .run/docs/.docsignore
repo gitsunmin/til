@@ -22,10 +22,6 @@ bun.lockb
 .gitignore
 .gitmodules
 
-# HUSKY
-
-.husky
-
 # TARGET
 
 README.md

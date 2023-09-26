@@ -21,6 +21,6 @@
       "@git/*": ["./.run/git/*"]
     }
   },
-  "include": [".husky/**/*.ts", ".run/**/*.ts"],
+  "include": [".run/**/*.ts"],
   "exclude": ["node_modules"]
 }
