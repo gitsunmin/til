@@ -20,6 +20,7 @@
 
 ## css
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
+- [animation.md](/css/animation.md)
 - [backdrop-filter.md](/css/backdrop-filter.md)
 - [css-functions.md](/css/css-functions.md)
 - [hsl.md](/css/hsl.md)
