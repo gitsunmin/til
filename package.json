@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run:sm": "bun .run/submodules/index.ts",
-    "run:docs": "bun .run/docs"
+    "run:docs": "bun .run/docs/index.ts"
   },
   "repository": {
     "type": "git",
