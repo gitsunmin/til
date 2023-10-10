@@ -42,6 +42,9 @@
 - [git-shortcuts-command-in-zsh.md](/editor/git-shortcuts-command-in-zsh.md)
 - [learn-vim.md](/editor/learn-vim.md)
 
+## firebase
+- [remote-config.md](/firebase/remote-config.md)
+
 ## flutter
 - [basic-handling-errors.md](/flutter/basic-handling-errors.md)
 - [final-and-const.md](/flutter/final-and-const.md)
@@ -50,6 +53,7 @@
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
+- [map.md](/functional_programing/map.md)
 - [patial-application.md](/functional_programing/patial-application.md)
 - [point-free-style.md](/functional_programing/point-free-style.md)
 
