@@ -31,6 +31,7 @@
 
 ## dart
 - [learning-dart.md](/dart/learning-dart.md)
+- [sealed-class.md](/dart/sealed-class.md)
 - [typedef.md](/dart/typedef.md)
 
 ## database
