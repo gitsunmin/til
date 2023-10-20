@@ -64,6 +64,7 @@
 - [checkout-previous-branch.md](/git/checkout-previous-branch.md)
 - [creating-branch-from-commit.md](/git/creating-branch-from-commit.md)
 - [git-bisect-command.md](/git/git-bisect-command.md)
+- [gitmoji.md](/git/gitmoji.md)
 - [how-to-initialize-all-changes.md](/git/how-to-initialize-all-changes.md)
 - [import-only-one-file-from-a-stash.md](/git/import-only-one-file-from-a-stash.md)
 - [key-commit-message-abbreviations.md](/git/key-commit-message-abbreviations.md)
