@@ -22,6 +22,8 @@
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
 - [animation.md](/css/animation.md)
 - [backdrop-filter.md](/css/backdrop-filter.md)
+- [background-position.md](/css/background-position.md)
+- [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
 - [hsl.md](/css/hsl.md)
 - [object-fit.md](/css/object-fit.md)
@@ -53,6 +55,10 @@
 - [flutterflow.md](/flutter/flutterflow.md)
 - [future-and-stream.md](/flutter/future-and-stream.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
+
+## frontend_framework
+- [docusaurus.md](/frontend_framework/docusaurus.md)
+- [nextjs.md](/frontend_framework/nextjs.md)
 
 ## functional_programing
 - [algebraic-data-type.md](/functional_programing/algebraic-data-type.md)
@@ -87,9 +93,6 @@
 ## network
 - [abortController.md](/network/abortController.md)
 - [DNS-domain-name-system.md](/network/DNS-domain-name-system.md)
-
-## nextjs
-- [learning-nextjs.md](/nextjs/learning-nextjs.md)
 
 ## package
 - [automatically-sink-the-node-version-using-nvmrc.md](/package/automatically-sink-the-node-version-using-nvmrc.md)
