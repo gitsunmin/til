@@ -111,6 +111,9 @@
 ## tauri
 - [about-tauri.md](/tauri/about-tauri.md)
 
+## test
+- [test-coverage.md](/test/test-coverage.md)
+
 ## testing
 - [false-positive-and-false-negative.md](/testing/false-positive-and-false-negative.md)
 
