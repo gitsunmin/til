@@ -59,6 +59,7 @@
 
 ## frontend_framework
 - [docusaurus.md](/frontend_framework/docusaurus.md)
+- [nextjs-v14-summary.md](/frontend_framework/nextjs-v14-summary.md)
 - [nextjs.md](/frontend_framework/nextjs.md)
 
 ## functional_programing
