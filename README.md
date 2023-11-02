@@ -71,6 +71,7 @@
 ## git
 - [checkout-previous-branch.md](/git/checkout-previous-branch.md)
 - [creating-branch-from-commit.md](/git/creating-branch-from-commit.md)
+- [force-with-lease-option.md](/git/force-with-lease-option.md)
 - [git-bisect-command.md](/git/git-bisect-command.md)
 - [gitmoji.md](/git/gitmoji.md)
 - [how-to-initialize-all-changes.md](/git/how-to-initialize-all-changes.md)
