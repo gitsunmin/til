@@ -16,6 +16,7 @@
 
 ## cs
 - [aot_and_jit_compiler.md](/cs/aot_and_jit_compiler.md)
+- [ast.md](/cs/ast.md)
 - [how-to-change-kernel-parameters.md](/cs/how-to-change-kernel-parameters.md)
 - [how-to-check-system-uptime-and-system-load.md](/cs/how-to-check-system-uptime-and-system-load.md)
 
