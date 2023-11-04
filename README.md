@@ -84,6 +84,7 @@
 ## html
 - [good-image-files-on-the-web-SVG.md](/html/good-image-files-on-the-web-SVG.md)
 - [new-html-element-search.md](/html/new-html-element-search.md)
+- [picture.md](/html/picture.md)
 
 ## javascript
 - [canvas-api.md](/javascript/canvas-api.md)
