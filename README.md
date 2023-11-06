@@ -41,6 +41,9 @@
 ## database
 - [basic-of-partitioning.md](/database/basic-of-partitioning.md)
 
+## docker
+- [docker-compose.md](/docker/docker-compose.md)
+
 ## editor
 - [auto-nvm-use-in-zsh.md](/editor/auto-nvm-use-in-zsh.md)
 - [autocomplete-commit-message-in-vscode-with-copilot.md](/editor/autocomplete-commit-message-in-vscode-with-copilot.md)
