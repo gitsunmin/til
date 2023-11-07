@@ -30,6 +30,7 @@
 - [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
 - [hsl.md](/css/hsl.md)
 - [object-fit.md](/css/object-fit.md)
+- [placeholder-shown.md](/css/placeholder-shown.md)
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 - [tailwind-css.md](/css/tailwind-css.md)
