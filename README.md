@@ -27,6 +27,7 @@
 - [background-position.md](/css/background-position.md)
 - [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
+- [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
 - [hsl.md](/css/hsl.md)
 - [object-fit.md](/css/object-fit.md)
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
