@@ -99,6 +99,7 @@
 - [promise-all-settled-and-promise-all.md](/javascript/promise-all-settled-and-promise-all.md)
 - [proxy-grammar.md](/javascript/proxy-grammar.md)
 - [shallow-merge-and-deep-merge.md](/javascript/shallow-merge-and-deep-merge.md)
+- [the-easiest-way-to-create-uuid-in-js.md](/javascript/the-easiest-way-to-create-uuid-in-js.md)
 
 ## network
 - [abortController.md](/network/abortController.md)
