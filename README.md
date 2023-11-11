@@ -88,6 +88,7 @@
 
 ## html
 - [good-image-files-on-the-web-SVG.md](/html/good-image-files-on-the-web-SVG.md)
+- [lazy-loading.md](/html/lazy-loading.md)
 - [new-html-element-search.md](/html/new-html-element-search.md)
 - [picture.md](/html/picture.md)
 
