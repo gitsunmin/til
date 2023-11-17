@@ -122,11 +122,10 @@
 ## tauri
 - [about-tauri.md](/tauri/about-tauri.md)
 
-## test
-- [test-coverage.md](/test/test-coverage.md)
-
 ## testing
 - [false-positive-and-false-negative.md](/testing/false-positive-and-false-negative.md)
+- [monkey-testing-and-gorilla-testing.md](/testing/monkey-testing-and-gorilla-testing.md)
+- [test-coverage.md](/testing/test-coverage.md)
 
 ## typescript
 - [create-utility-type-reverse.md](/typescript/create-utility-type-reverse.md)
