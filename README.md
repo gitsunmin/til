@@ -60,6 +60,7 @@
 - [basic-handling-errors.md](/flutter/basic-handling-errors.md)
 - [cocoapod.md](/flutter/cocoapod.md)
 - [final-and-const.md](/flutter/final-and-const.md)
+- [flutter-method-channel.md](/flutter/flutter-method-channel.md)
 - [flutterflow.md](/flutter/flutterflow.md)
 - [future-and-stream.md](/flutter/future-and-stream.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
