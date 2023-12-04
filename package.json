@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run:sm": "bun .run/submodules/index.ts",
-    "run:docs": "bun .run/docs/excute.ts"
+    "run:docs": "bun .run/docs/excute.ts",
+    "show:latest-10": "git log -n 10 --name-only --oneline"
   },
   "repository": {
     "type": "git",
