@@ -53,6 +53,7 @@
 
 ## flutter
 - [add-flavor.md](/flutter/add-flavor.md)
+- [assert.md](/flutter/assert.md)
 - [basic-handling-errors.md](/flutter/basic-handling-errors.md)
 - [cocoapod.md](/flutter/cocoapod.md)
 - [final-and-const.md](/flutter/final-and-const.md)
