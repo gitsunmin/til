@@ -35,11 +35,6 @@
 - [replaced-elements.md](/css/replaced-elements.md)
 - [tailwind-css.md](/css/tailwind-css.md)
 
-## dart
-- [learning-dart.md](/dart/learning-dart.md)
-- [sealed-class.md](/dart/sealed-class.md)
-- [typedef.md](/dart/typedef.md)
-
 ## database
 - [basic-of-partitioning.md](/database/basic-of-partitioning.md)
 
@@ -64,7 +59,10 @@
 - [flutter-method-channel.md](/flutter/flutter-method-channel.md)
 - [flutterflow.md](/flutter/flutterflow.md)
 - [future-and-stream.md](/flutter/future-and-stream.md)
+- [learning-dart.md](/flutter/learning-dart.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
+- [sealed-class.md](/flutter/sealed-class.md)
+- [typedef.md](/flutter/typedef.md)
 
 ## frontend_framework
 - [docusaurus.md](/frontend_framework/docusaurus.md)
