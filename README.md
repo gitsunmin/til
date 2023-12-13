@@ -60,6 +60,7 @@
 - [flutter-method-channel.md](/flutter/flutter-method-channel.md)
 - [flutterflow.md](/flutter/flutterflow.md)
 - [future-and-stream.md](/flutter/future-and-stream.md)
+- [how-to-go-store.md](/flutter/how-to-go-store.md)
 - [learning-dart.md](/flutter/learning-dart.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
 - [sealed-class.md](/flutter/sealed-class.md)
@@ -103,6 +104,9 @@
 - [proxy-grammar.md](/javascript/proxy-grammar.md)
 - [shallow-merge-and-deep-merge.md](/javascript/shallow-merge-and-deep-merge.md)
 - [the-easiest-way-to-create-uuid-in-js.md](/javascript/the-easiest-way-to-create-uuid-in-js.md)
+
+## mobile
+- [android-icon-name.md](/mobile/android-icon-name.md)
 
 ## network
 - [abortController.md](/network/abortController.md)
