@@ -25,6 +25,7 @@
 - [animation.md](/css/animation.md)
 - [backdrop-filter.md](/css/backdrop-filter.md)
 - [background-position.md](/css/background-position.md)
+- [color-scheme.md](/css/color-scheme.md)
 - [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
 - [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
