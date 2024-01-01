@@ -22,6 +22,7 @@
 
 ## css
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
+- [accent-color.md](/css/accent-color.md)
 - [animation.md](/css/animation.md)
 - [backdrop-filter.md](/css/backdrop-filter.md)
 - [background-position.md](/css/background-position.md)
@@ -96,6 +97,7 @@
 - [meta-tag-charset.md](/html/meta-tag-charset.md)
 - [new-html-element-search.md](/html/new-html-element-search.md)
 - [picture.md](/html/picture.md)
+- [popover-attribute.md](/html/popover-attribute.md)
 
 ## javascript
 - [canvas-api.md](/javascript/canvas-api.md)
