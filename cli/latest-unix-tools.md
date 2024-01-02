@@ -2,7 +2,7 @@
 
 install?
 
-- [ ] cat → bat
+- [x] cat → bat
 - [ ] ls → exa, lsd
 - [ ] diff → delta
 - [ ] du → dust

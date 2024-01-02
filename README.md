@@ -12,6 +12,7 @@
 - [view-in-html-Layer-3d.md](/browser/view-in-html-Layer-3d.md)
 
 ## cli
+- [bat.md](/cli/bat.md)
 - [latest-unix-tools.md](/cli/latest-unix-tools.md)
 
 ## cs
