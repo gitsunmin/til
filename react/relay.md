@@ -20,3 +20,10 @@ Relay는 GraphQL로 데이터를 Query하고, Mutation하는 데 사용되는 Re
 - Hyper-optimized runtime: Relay는 끊임없이 최적화됩니다. JIT 친화적인 런타임은 어떤 페이로드를 기대할지 정적으로 결정하여 들어오는 데이터를 더 빠르게 처리합니다.
   - JIT (Just In Time): 프로그램이 실행되는 도중에 필요한 부분만을 즉석에서 컴파일하는 방식을 의미합니다. 프로그램이 실행되는 도중에 필요한 부분만을 즉석에서 컴파일하는 방식을 의미합니다.
   - AOT (Ahead Of Time): 프로그램이 실행되기 전에 필요한 부분을 미리 컴파일하는 방식을 의미합니다.
+
+## Relay Compiler
+
+Relay Compiler는 GraphQL 쿼리를 JavaScript 코드로 변환합니다. 또한 한 페이지에서 독립적으로 사용중인 Query가 있을 경우에 이를 하나의 쿼리로 결합합니다.
+
+직접 실행해볼수도 있다.
+[여기](https://relay.dev/compiler-explorer/#enc=1&schemaText=C4TwDgpgBAqgzhATlA3gKClAdgQwLYQBcUAysIgJZYDmGUO1RUAklsHQEYRzAD6AZpQhYAJsXhI0AXzRpQkKAEUArkhCo6BcQkTSgA&documentText=I4VwpgTgngBAslAiuaMDeAoGMC2Z1bYwB2AhnodgHQ0CCA5mAGISn17EAulMARmAGdOAfQBmEAJZhiAEwJEiNKg2at207goC%2BhHTozi2HTjBUsjGmAHtiMAKoDI8kuTAYdQA&outputType=operation&no_inline=true&enable_3d_branch_arg_generation=true&actor_change_support=true&text_artifacts=true&language=typescript)
