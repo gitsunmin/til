@@ -27,3 +27,56 @@ Relay Compiler는 GraphQL 쿼리를 JavaScript 코드로 변환합니다. 또한
 
 직접 실행해볼수도 있다.
 [여기](https://relay.dev/compiler-explorer/#enc=1&schemaText=C4TwDgpgBAqgzhATlA3gKClAdgQwLYQBcUAysIgJZYDmGUO1RUAklsHQEYRzAD6AZpQhYAJsXhI0AXzRpQkKAEUArkhCo6BcQkTSgA&documentText=I4VwpgTgngBAslAiuaMDeAoGMC2Z1bYwB2AhnodgHQ0CCA5mAGISn17EAulMARmAGdOAfQBmEAJZhiAEwJEiNKg2at207goC%2BhHTozi2HTjBUsjGmAHtiMAKoDI8kuTAYdQA&outputType=operation&no_inline=true&enable_3d_branch_arg_generation=true&actor_change_support=true&text_artifacts=true&language=typescript)
+
+## Fragment
+
+Relay는 GraphQL의 Fragment를 사용하여 컴포넌트에 필요한 데이터를 선언합니다. Fragment는 GraphQL의 Query와 유사하지만, 이름이 있고, 재사용 가능하며, 컴포넌트에 필요한 데이터만을 포함합니다.
+
+### Fragment 사용법
+
+1. 정의하기
+
+```graphql
+import { graphql } from 'relay-runtime';
+
+const ImageFragment = graphql`
+  fragment ImageFragment on Image {
+    url
+  }
+`;
+```
+
+2. 사용하기
+
+```graphql
+const StoryFragment = graphql`
+  fragment StoryFragment on Story {
+    title
+    summary
+    postedAt
+    poster {
+      ...PosterBylineFragment
+    }
+    thumbnail {
+      ...ImageFragment
+    }
+  }
+`;
+```
+
+3. useFragment로 사용하기
+
+```typescript
+import { useFragment } from 'react-relay';
+import type { ImageFragment$key } from "./__generated__/ImageFragment.graphql";
+
+type Props = {
+  image: ImageFragment$key;
+  ...
+};
+
+function Image({image}: Props) {
+  const data = useFragment(ImageFragment, image);
+  return <img key={data.url} src={data.url} ... />
+}
+```
