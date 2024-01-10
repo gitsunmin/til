@@ -147,6 +147,7 @@
 - [keyword-satisfies-to-support-safe-upcast.md](/typescript/keyword-satisfies-to-support-safe-upcast.md)
 - [numerical-string-type.md](/typescript/numerical-string-type.md)
 - [tagged-union-type.md](/typescript/tagged-union-type.md)
+- [ts-ignore-and-ts-expect-error.md](/typescript/ts-ignore-and-ts-expect-error.md)
 - [ts-pattern.md](/typescript/ts-pattern.md)
 - [typescript-infer-keyword.md](/typescript/typescript-infer-keyword.md)
 
