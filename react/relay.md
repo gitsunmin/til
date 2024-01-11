@@ -80,3 +80,50 @@ function Image({image}: Props) {
   return <img key={data.url} src={data.url} ... />
 }
 ```
+## Glossary
+
+### Directive
+
+릴레이 컴파일러나 서버에 특수 명령을 제공하는 graphql 리터럴 또는 graphql 파일에 포함되어 있습니다.
+
+#### @arguments
+
+fragment spread에 인자를 전달할 때 사용합니다. 인자는 fragment 정의에서 @argument로 선언되어야 합니다.
+
+```graphql
+const StoryFragment = graphql`
+  fragment StoryFragment on Story {
+    title
+    summary
+    postedAt
+    poster {
+      ...PosterBylineFragment @arguments(line: "22")
+    }
+    thumbnail {
+      ...ImageFragment
+    }
+  }
+`;
+```
+
+#### @argumentDefinitions
+
+fragment 정의를 수정하고 프래그먼트가 사용할 수 있는 로컬 인수의 이름과 타입을 정의하는 지시문입니다.
+
+```graphql
+const StoryFragment = graphql`
+  fragment StoryFragment on Story @argumentDefinitions(line: {type: "Int"}) {
+    title
+    summary
+    postedAt
+    poster {
+      ...PosterBylineFragment @arguments(line: $line)
+    }
+    thumbnail {
+      ...ImageFragment
+    }
+  }
+`;
+```
+
+
