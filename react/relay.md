@@ -126,4 +126,53 @@ const StoryFragment = graphql`
 `;
 ```
 
+#### @connection
+이 @connection은 커서 기반의 페이지네이션을 구현하는 데 사용되며, Relay의 쿼리에서 페이징을 관리하기 위한 메커니즘을 제공합니다.
+```graphql
+graphql`
+  query ExampleQuery {
+    user(id: "123") {
+      friends(first: 10, after: $cursor) @connection(key: "ExampleQuery_friends") {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`
 
+```
+이 예시에서는 user 오브젝트의 friends 필드에 대해 페이징 처리를 하기 위해 @connection 지시어를 사용합니다. key 인자는 "ExampleQuery_friends"로 설정되어 Relay가 이 커넥션을 식별할 수 있도록 합니다. first와 after 인자는 페이지네이션을 제어하는 데 사용됩니다.
+
+#### @include
+@include는 주어진 조건이 true일 때 쿼리의 특정 부분을 포함시키는 데 사용됩니다. 이는 동적인 쿼리 작성에 유용하며, 필요에 따라 서버로부터 받아오는 데이터를 조절할 수 있게 해줍니다.
+```graphql
+graphql`
+  query ExampleQuery($isDetailed: Boolean!, $skipUser: Boolean!) {
+    user(id: "123") {
+      id
+      name
+      ...UserDetails @include(if: $isDetailed)
+    }
+  }
+`
+```
+
+#### @skip
+ @skip은 주어진 조건이 true일 때 쿼리의 특정 부분을 제외시키는 데 사용됩니다. 이를 통해 불필요한 데이터의 요청을 줄이고, 네트워크 트래픽과 서버 부하를 감소시킬 수 있습니다.
+
+```graphql
+graphql`
+  query ExampleQuery($isDetailed: Boolean!, $skipUser: Boolean!) {
+    user(id: "123") {
+      id
+      name
+      ...UserContacts @skip(if: $skipUser)
+    }
+  }
+`
+
+```
