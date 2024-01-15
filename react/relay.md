@@ -176,3 +176,80 @@ graphql`
 `
 
 ```
+
+## Store
+[here](https://relay.dev/docs/api-reference/store/)
+Relay는 GraphQL 데이터를 캐싱하는 저장소가 존재합니다. 이 저장소에 접근하는 방법에 대해서 알아보겠습니다.
+
+### RecordSourceSelectorProxy
+RecordSourceSelectorProxy는 업데이터 함수가 인수로 받는 저장소 유형입니다. 다음은 RecordSourceSelectorProxy 인터페이스입니다:
+
+```ts
+interface RecordSourceSelectorProxy {
+  create(dataID: string, typeName: string): RecordProxy;
+  delete(dataID: string): void;
+  get(dataID: string): ?RecordProxy;
+  getRoot(): RecordProxy;
+  getRootField(fieldName: string): ?RecordProxy;
+  getPluralRootField(fieldName: string): ?Array<?RecordProxy>;
+  invalidateStore(): void;
+}
+```
+
+#### create(dataID: string, typeName: string): RecordProxy
+GraphQL 스키마에 정의된 데이터ID와 유형 이름이 주어지면 스토어에 새 레코드를 생성합니다. 새로 생성된 레코드를 변경하는 인터페이스 역할을 하는 RecordProxy를 반환합니다.
+
+```ts
+const record = store.create(dataID, 'Todo');
+```
+
+#### delete(dataID: string): void
+주어진 데이터ID를 가진 레코드를 스토어에서 삭제합니다.
+
+```ts
+store.delete(dataID);
+```
+
+#### get(dataID: string): ?RecordProxy
+주어진 데이터ID를 가진 레코드를 반환합니다. 레코드가 존재하지 않으면 null을 반환합니다.
+
+```ts
+const record = store.get(dataID);
+```
+
+#### getRoot(): RecordProxy
+스토어의 루트 레코드를 반환합니다. 루트 레코드는 스키마의 Query 타입에 해당합니다.
+
+아래와 같이 정의되어 있을 떄,
+```graphql
+viewer {
+  id
+}
+```
+
+아래와 같이 사용할 수 있습니다.
+```ts
+const root = store.getRoot();
+```
+
+#### getPluralRootField(fieldName: string): ?Array<?RecordProxy>
+GraphQL 문서에 정의된 대로 fieldName이 주어진 스토어에서 컬렉션을 나타내는 루트 필드를 검색합니다. 레코드 프록시 배열을 반환합니다.
+```graphql
+nodes(first: 10) {
+  # ...
+}
+```
+
+```ts
+const nodes = store.getPluralRootField('nodes');
+```
+
+#### invalidateStore(): void
+릴레이 스토어를 전역적으로 무효화합니다. 이렇게 하면 무효화가 발생하기 전에 스토어에 기록된 모든 데이터가 부실 데이터로 간주되어 다음에 environment.check()로 쿼리를 검사할 때 다시 가져와야 하는 것으로 간주됩니다.
+
+```ts
+store.invalidateStore();
+
+environment.check(query) === 'stale'
+```
+1
