@@ -87,6 +87,7 @@
 - [git-bisect-command.md](/git/git-bisect-command.md)
 - [gitmoji.md](/git/gitmoji.md)
 - [how-to-initialize-all-changes.md](/git/how-to-initialize-all-changes.md)
+- [how-to-use-two-accounts.md](/git/how-to-use-two-accounts.md)
 - [import-only-one-file-from-a-stash.md](/git/import-only-one-file-from-a-stash.md)
 - [key-commit-message-abbreviations.md](/git/key-commit-message-abbreviations.md)
 - [resurrection-of-commit.md](/git/resurrection-of-commit.md)
