@@ -12,9 +12,9 @@ $ vi .gitconfig
 ```bash
 # .gitconfig
 
-[includeIf "gitdir:~/workspace/my"]
+[includeIf "gitdir:~/workspace/my/"]
     path = ~/.gitconfig-my
-[includeIf "gitdir:~/workspace/work"]
+[includeIf "gitdir:~/workspace/work/"]
     path = ~/.gitconfig-work
 ```
 
