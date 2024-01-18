@@ -13,6 +13,7 @@
 
 ## cli
 - [bat.md](/cli/bat.md)
+- [concurrently_js.md](/cli/concurrently_js.md)
 - [latest-unix-tools.md](/cli/latest-unix-tools.md)
 
 ## cs
