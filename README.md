@@ -120,6 +120,7 @@
 
 ## opensource
 - [code_of_conduct.md](/opensource/code_of_conduct.md)
+- [open-source-initiative.md](/opensource/open-source-initiative.md)
 
 ## package
 - [automatically-sink-the-node-version-using-nvmrc.md](/package/automatically-sink-the-node-version-using-nvmrc.md)
