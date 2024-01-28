@@ -105,6 +105,7 @@
 ## javascript
 - [canvas-api.md](/javascript/canvas-api.md)
 - [custom-event.md](/javascript/custom-event.md)
+- [document-animate.md](/javascript/document-animate.md)
 - [ECMAScript-2023.md](/javascript/ECMAScript-2023.md)
 - [performance-comparison-of-array.find-and-array.indexOf.md](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
 - [promise-all-settled-and-promise-all.md](/javascript/promise-all-settled-and-promise-all.md)
