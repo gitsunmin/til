@@ -76,3 +76,42 @@ HTML `<meta>` 요소는 `html`문서의 *메타데이터*를 나타냅니다.
 > facebook에서는 더 풍부한 메타데이터를 사용하기 위해서 아래와 같은 프로토콜을 사용하고 있습니다.
   - [Open Graph Data](https://ogp.me/)
 
+#### `<title></title>`
+이 요소는 문서의 제목을 정의합니다. 제목은 브라우저의 제목 표시줄이나 페이지의 탭에 표시됩니다. 또한 검색 엔진의 결과 페이지에 표시됩니다.
+
+#### `<body></body>`
+이 요소는 문서의 본문을 나타냅니다. 브라우저는 이 요소의 콘텐츠 즉, 보여지는 부분을 표시합니다. 그렇기 때문에, 보여지는 부분의 전역적인 콜백을 정의하는 것이 가능합니다.
+- onafterprint
+사용자가 문서를 출력한 뒤 호출할 함수.
+- onbeforeprint
+사용자가 문서 출력을 요청했을 때 호출할 함수.
+- onblur
+문서가 포커스를 상실했을 때 호출할 함수.
+- onerror
+문서를 제대로 불러오지 못했을 때 호출할 함수.
+- onfocus
+문서가 포커스를 받을 때 호출할 함수.
+- onhashchange
+문서의 현재 주소 중 Fragment identifier part(해시('#') 문자로 시작)가 변경됐을 때 호출할 함수.
+- onlanguagechange Experimental
+선호 언어 변경 시 호출할 함수.
+- onload
+문서를 다 불러왔을 때 호출할 함수.
+- onmessage
+문서가 메시지를 받았을 때 호출할 함수.
+- onoffline
+네트워크 연결이 끊겼을 때 호출할 함수.
+- ononline
+네트워크 연결을 복구했을 때 호출할 함수.
+- onpopstate
+사용자가 세션 기록을 따라 이동했을 때 호출할 함수.
+- onundo
+사용자가 되돌리기 변경 기록(undo transaction history)에서 이전으로 이동했을 때 호출할 함수.
+- onredo
+사용자가 되돌리기 변경 기록(undo transaction history)에서 다시 이후로 이동했을 때 호출할 함수.
+- onresize
+문서의 크기가 바뀔 때 호출할 함수.
+- onstorage
+저장 영역이 변경되었을 때 호출할 함수.
+- onunload
+문서를 처분(unload) 중일 때 호출할 함수.
