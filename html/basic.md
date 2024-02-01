@@ -115,3 +115,6 @@ HTML `<meta>` 요소는 `html`문서의 *메타데이터*를 나타냅니다.
 저장 영역이 변경되었을 때 호출할 함수.
 - onunload
 문서를 처분(unload) 중일 때 호출할 함수.
+
+
+> 책깔피 https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics#%EC%9D%B4%EB%AF%B8%EC%A7%80
