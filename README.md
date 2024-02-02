@@ -130,6 +130,9 @@
 - [automatically-sink-the-node-version-using-nvmrc.md](/package/automatically-sink-the-node-version-using-nvmrc.md)
 - [basic-yarn-berry.md](/package/basic-yarn-berry.md)
 
+## php
+- [basic.md](/php/basic.md)
+
 ## react
 - [how-to-check-children-in-react-component.md](/react/how-to-check-children-in-react-component.md)
 - [overuse-of-useMemo-and-useCallback.md](/react/overuse-of-useMemo-and-useCallback.md)
