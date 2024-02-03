@@ -116,5 +116,41 @@ HTML `<meta>` 요소는 `html`문서의 *메타데이터*를 나타냅니다.
 - onunload
 문서를 처분(unload) 중일 때 호출할 함수.
 
+#### `<h1, 2, 3, 4, 5, 6></h1, 2, 3, 4, 5, 6>`
+
+이 요소는 문서의 섹션 제목을 나타냅니다. `<h1>`은 가장 중요한 제목을 나타내며, `<h6>`은 가장 낮은 수준의 제목을 나타냅니다.
+
+#### `<img>`
+
+이 요소는 이미지를 문서에 삽입합니다.
+
+- src: 이미지의 URL을 나타냅니다.
+- alt: 이미지를 불러오지 못 할 경우에 대체 텍스트를 나타냅니다.
+- width: 이미지의 너비를 나타냅니다.
+- height: 이미지의 높이를 나타냅니다.
+- srcset: 같은 비율의 다양한 크기를 가지는 동일 이미지들을 최소 2개 이상 명시하는 속성
+  -  브라우저에 이미지 선택권을 위임하는 속성
+  -  뷰포트의 크기에 따라 다른 이미지를 보여주는 것을 가능하게 합니다.
+  -  브라우저가 지원하지 않는 경우에는 src 속성을 사용합니다.
+  -  브라우저가 srcset을 지원하지 않는 경우에는 src 속성을 사용합니다.
+  -  예를들면, 이렇게 사용하면 됩니다. `<img src="small.jpg" srcset="medium.jpg 1000w, large.jpg 2000w" alt="A rad wolf">`
+- sizes: 이미지의 크기를 나타냅니다.
+  - 사용 예시: `<img src="small.jpg" sizes="(max-width: 600px) 200px, (max-width: 1000px) 400px, 800px" alt="A rad wolf">`
+- crossorigin: 이미지를 가져올 때 CORS를 사용할지 여부를 나타냅니다.
+- usemap: 이미지와 연결된 이미지 맵을 나타냅니다.
+- ismap: 이미지가 이미지 맵을 나타내는지 여부를 나타냅니다.
+- anonymous: 자격 증명 없이 교차 출처 요청을 전송합니다. 즉, Origin HTTP 헤더를 쿠키, X.509 인증서, HTTP Basic 인증 없이 전송합니다. 서버에서 Access-Control-Allow-Origin HTTP 헤더를 지정하지 않음으로써 요청 출처 사이트에 자격 증명을 보내지 않는다면 이미지는 "오염"되고, 사용처가 제한됩니다.
+- use-credentials: 자격 증명과 함께 교차 출처 요청을 전송합니다. 즉, Origin HTTP 헤더를 쿠키, X 509 인증서, 또는 HTTP Basic 이증과 함께 전송합니다. 서버에서 Access-Control-Allow-Credentials HTTP 헤더를 통한 자격 증명을 요청 출처 사이트에 보내지 않는다면 이미지는 "오염"되고, 사용처가 제한됩니다.
+- decoding: 이미지 디코딩에 관해 브라우저에 제공할 힌트. 가능한 값은 다음과 같습니다.
+  - auto: 브라우저가 이미지를 디코딩하는 방법을 결정합니다.
+  - sync: 이미지를 동기적으로 디코딩합니다.
+  - async: 이미지를 비동기적으로 디코딩합니다.
+  - 예시: `<img src="image.png" decoding="async" alt="A rad wolf">`
+- loading: 이미지 로딩 전략을 나타냅니다. 가능한 값은 다음과 같습니다.
+  - auto: 브라우저가 이미지 로딩 전략을 결정합니다.
+  - eager: 이미지를 즉시 로딩합니다.
+  - lazy: 이미지를 지연 로딩합니다.
+  - 예시: `<img src="image.png" loading="lazy" alt="A rad wolf">`
+
 
 > 책깔피 https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics#%EC%9D%B4%EB%AF%B8%EC%A7%80
