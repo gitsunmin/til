@@ -153,4 +153,51 @@ HTML `<meta>` 요소는 `html`문서의 *메타데이터*를 나타냅니다.
   - 예시: `<img src="image.png" loading="lazy" alt="A rad wolf">`
 
 
-> 책깔피 https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics#%EC%9D%B4%EB%AF%B8%EC%A7%80
+#### `<h1, 2, 3, 4, 5, 6></h1, 2, 3, 4, 5, 6>`
+
+이 요소는 문서의 섹션 제목을 나타냅니다. `<h1>`은 가장 중요한 제목을 나타내며, `<h6>`은 가장 낮은 수준의 제목을 나타냅니다.
+
+#### `<p></p>`
+
+이 요소는 문단을 나타냅니다.
+
+#### `<a></a>`
+
+이 요소는 하이퍼링크를 나타냅니다.
+- href: 링크의 URL을 나타냅니다.
+  - sheme: 링크의 URL의 스키마를 나타냅니다.
+    - 사용 예시: `<a href="https://developer.mozilla.org/">MDN</a>`
+    - 사용 예시: `<a href="mailto: [email protected]">Send email</a>`
+    - 사용 예시: `<a href="tel:+12015550123">Call me</a>`
+    - 사용 예시: `<a href="sms:+12015550123">Send a message</a>`
+- target: 링크를 열 위치를 나타냅니다.
+  - _self: 현재 창에서 링크를 엽니다.
+  - _blank: 새 창에서 링크를 엽니다.
+  - _parent: 부모 창에서 링크를 엽니다.
+  - _top: 최상위 창에서 링크를 엽니다. 부모 window가 없으면 _self와 같은 효과를 냅니다.
+- download: 링크를 다운로드할 때 사용할 파일 이름을 나타냅니다.
+  - 사용 예시: `<a href="image.png" download="radwolf.png">Download</a>`
+- rel: 현재 문서와 링크된 문서 사이의 관계를 나타냅니다.
+  - 사용 예시: `<a href="https://developer.mozilla.org/" rel="external">MDN</a>`
+- type: 링크된 리소스의 MIME 타입을 나타냅니다.
+  - 사용 예시: `<a href="image.png" type="image/png">Download</a>`
+- referrerpolicy: 링크된 리소스에 대한 referrer 정보를 제어합니다.
+  - 사용 예시: `<a href="https://developer.mozilla.org/" referrerpolicy="no-referrer">MDN</a>`
+- ping: 링크된 리소스에 대한 클릭 정보를 전송합니다.
+  - 사용 예시: `<a href="https://developer.mozilla.org/" ping="https://example.com/tracker">MDN</a>`
+- hreflang: 링크된 리소스의 언어를 나타냅니다.
+  - 사용 예시: `<a href="https://developer.mozilla.org/" hreflang="en">MDN</a>`
+
+
+#### `<li></li>`
+이 요소는 목록의 항목을 나타냅니다.
+- value: 항목의 순서를 나타냅니다.
+  - 사용 예시: `<ol><li value="2">두 번째 항목</li></ol>`
+
+#### `<ul></ul>`
+이 요소는 순서 없는 목록을 나타냅니다. unordered list의 약자입로서 순서가 없는 목록을 나타냅니다.
+
+#### `<ol></ol>`
+이 요소는 순서 있는 목록을 나타냅니다. ordered list의 약자로서 순서가 있는 목록을 나타냅니다.
+
+
