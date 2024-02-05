@@ -192,12 +192,12 @@ Next에서는 page를 제공하는 route 외에도 api를 제공하는 route를 
 이 API는 모든 METHOD를 지원합니다. 그리고, 이 API는 다음과 같이 정의할 수 있습니다.
 
 ```tsx
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const res = await fetch("https://gitsunmin.dev/...", {
+  const res = await fetch('https://gitsunmin.dev/...', {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
   const data = await res.json();
@@ -213,15 +213,15 @@ fetch api를 사용하여 다른 METHOD를 사용할 수 있으며 cashing과 �
 - cookie
 
 ```tsx
-import { cookies } from "next/headers";
+import { cookies } from 'next/headers';
 
 export async function GET(request: Request) {
   const cookieStore = cookies();
-  const token = cookieStore.get("token");
+  const token = cookieStore.get('token');
 
-  return new Response("Hello, Next.js!", {
+  return new Response('Hello, Next.js!', {
     status: 200,
-    headers: { "Set-Cookie": `token=${token.value}` },
+    headers: { 'Set-Cookie': `token=${token.value}` },
   });
 }
 ```
@@ -229,13 +229,13 @@ export async function GET(request: Request) {
 - header
 
 ```tsx
-import { headers } from "next/headers";
+import { headers } from 'next/headers';
 
 export async function GET(request: Request) {
   const headersList = headers();
-  const referer = headersList.get("referer");
+  const referer = headersList.get('referer');
 
-  return new Response("Hello, Next.js!", {
+  return new Response('Hello, Next.js!', {
     status: 200,
     headers: { referer: referer },
   });
@@ -245,10 +245,10 @@ export async function GET(request: Request) {
 redirect도 가능합니다.
 
 ```tsx
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
 export async function GET(request: Request) {
-  redirect("https://nextjs.org/");
+  redirect('https://nextjs.org/');
 }
 ```
 
@@ -279,20 +279,38 @@ next에서 제공하는 미들웨어를 사용하기 위해서는 src/middleware
 
 ```tsx
 // middleware.ts
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  console.log("야호!");
+  console.log('야호!');
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/*",
+  matcher: '/*',
 };
 ```
 
 이렇게 정의 하면 모든 페이지에 방문할 때 마다 middleware가 실행됩니다. (야호!)
 
 이 기능을 이용하여 Redirect, Cookie 사용, Header 업데이트를 할 수 있습니다. 그리고 config의 matcher는 정규 표현식을 사용하며 array로 선언하여 다중 matcher를 사용할 수 있습니다.
+
+다만, 이 기능은 SSR에서만 사용이 가능하며, 단순 페이지 이동 api 통신 뿐만아니라 서버에서 받아오는 모든 파일에 적용이 됩니다. 그렇기 때문에, 이 기능을 사용할 때에는 불필요한 middleware를 호출을 막기 위해서 matcher를 잘 적용해두어야합니다.
+
+예시로서 다음과 같이 사용할 수 있습니다.
+
+```tsx
+// middleware.ts
+...
+
+
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/images|images|favicon.ico|application/views/pegasus/__assets/).*)',
+  ],
+};
+```
+
+위 코드는 \_next/static, \_next/images, images, favicon.ico, application/views/pegasus/\_\_assets/를 제외한 모든 경로에 middleware를 적용합니다. 이렇게 하면, 불필요한 middleware를 호출하는 것을 막을 수 있습니다.
