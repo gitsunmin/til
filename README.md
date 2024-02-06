@@ -114,6 +114,9 @@
 - [shallow-merge-and-deep-merge.md](/javascript/shallow-merge-and-deep-merge.md)
 - [the-easiest-way-to-create-uuid-in-js.md](/javascript/the-easiest-way-to-create-uuid-in-js.md)
 
+## library
+- [how-to-change-default-url-in-next-auth.md](/library/how-to-change-default-url-in-next-auth.md)
+
 ## mobile
 - [android-icon-name.md](/mobile/android-icon-name.md)
 
