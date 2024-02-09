@@ -105,6 +105,49 @@ HTML `<meta>` 요소는 `html`문서의 *메타데이터*를 나타냅니다.
 
 이 요소는 문서의 제목을 정의합니다. 제목은 브라우저의 제목 표시줄이나 페이지의 탭에 표시됩니다. 또한 검색 엔진의 결과 페이지에 표시됩니다.
 
+#### `<link>`
+
+이 요소는 `<head/>` 내부에 선언되며, 현재 문서와 외부 리소스의 관계를 정의합니다. 파비콘, 스타일 시트, 스크립트 등을 연결할 때 사용합니다.
+
+아래의 예시는 파비콘을 연결하는 예시입니다.
+```html
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" 
+  sizes="16x16 32x32"
+/>
+```
+
+아래 예시는 스타일 시트를 연결하는 예시입니다.
+```html
+<link rel="stylesheet" href="styles.css" />
+```
+
+아래 예시는 자바스크립트를 연결하는 예시입니다.
+```html
+<link rel="preload" href="script.js" as="script" />
+```
+
+##### 속성
+
+- rel: 현재 문서와 링크된 문서 사이의 관계를 나타냅니다.
+- href: 링크된 리소스의 URL을 나타냅니다.
+- type: 링크된 리소스의 MIME 타입을 나타냅니다.
+- sizes: 링크된 리소스의 크기를 나타냅니다.
+- as: `<link>` 요소에 rel="preload" 또는 rel="modulepreload" 특성을 지정했을 때만 사용합니다 as 특성은 `<link>` 요소가 불러오는 콘텐츠의 유형을 지정합니다. 요청 매칭, 올바른 콘텐츠 보안 정책의 적용, 올바른 Accept 요청 헤더 적용에 필요합니다. 이에 더해, rel="preload"는 as 특성을 사용해 요청 우선순위를 매깁니다. 다음 표는 특성의 유효한 값과, 해당 값이 적용되는 요소 또는 리소스를 나열합니다.
+- crossorigin: 리소스를 가져올 때 CORS를 사용해야 하는지 나타내는 열거형 특성입니다. CORS 활성화 이미지는 `<canvas>` 요소를 "오염"(taint)시키지 않고 재사용할 수 있습니다. 가능한 값은 다음과 같습니다.
+- anonymous, use-credentials: 교차 출처 요청(Origin HTTP 헤더를 가진 요청)을 수행하지만 인증 정보, 즉 쿠키, X.509 인증서, HTTP Basic 인증 중 어떠한 것도 전송하지 않습니다. 서버에서 Access-Control-Allow-Origin HTTP 헤더를 설정하지 않아서 출처 사이트에 인증 정보를 전달하지 않으면 리소스가 오염되어 사용처가 제한됩니다.
+- hreflang: 연결할 리소스가 사용하는 언어입니다. 오직 제안하는 용도로만 사용합니다. 가능한 값은 RFC 5646(BCP 47)에 따릅니다. href 특성이 존재할 때만 사용하세요.
+- imagesizes: rel="preload" 와 as="image" 에 한하여, imagesizes 특성은 img 요소에 사용되는 적절한 리소스를 해당 srcset 과 sizes 특성으로 preload 하도록 하는 크기 특성입니다.
+- imagesrcset: rel="preload" 와 as="image" 에 한하여, imagesrcset 특성은 img 요소에 사용되는 적절한 리소스를 해당 srcset 과 sizes 특성으로 preload 하도록 하는 소스 세트 특성입니다.
+- integrity: 인라인 메타데이터를 포함합니다. 브라우저에게 가져오도록 지시하려는 리소스(파일)의 Base64로 인코딩된 암호학적 해시입니다. 이를 이용해 브라우저는 가져온 리소스가 예기치 못한 조작 없이 전달되었는지 확인할 수 있습니다. 하위 리소스 무결성을 참고하십시오.
+- referrerpolicy:
+  - no-referrer 는 Referer 헤더가 전달되지 않을 것을 의미합니다.
+  - no-referrer-when-downgrade 는 TLS (HTTPS) 없이 출처로 이동할 때 Referer 헤더가 전달되지 않을 것을 의미합니다. 이것은 따로 지정한 정책이 없는 경우의 사용자 에이전트 기본 동작입니다.
+  - origin 은 레퍼러가 페이지의 출처(대략적으로 scheme, host, port)가 됨을 의미합니다.
+  - origin-when-cross-origin 은 다른 출처로의 이동이 scheme, host, port로 제한되며, 같은 출처로의 이동에는 레퍼러의 경로가 포함됨을 의미합니다.
+  - unsafe-url 은 레퍼러에 출처와 경로 (fragment, password, username은 제외)가 포함됨을 의미합니다. 이 경우 TLS로 보호된 리소스의 출처와 경로가 안전하지 않은 출처로 유출될 수 있으므로 안전하지 않습니다.
+- media: 연결할 리소스가 사용하는 미디어나 장치를 나타냅니다. 이 특성은 rel="stylesheet" 일 때만 사용합니다. 이 특성을 사용해 미디어 유형이나 쿼리를 지정할 수도 있습니다. 그러면 해당 미디어 조건을 만족할 때만 리소스를 불러옵니다.
+- title: title 특성은 `<link>` 요소에서 특수한 의미를 가집니다. rel="stylesheet" 에 사용되었을 경우, title은 기본 혹은 대체 스타일시트를 정의합니다.
+
 #### `<body></body>`
 
 이 요소는 문서의 본문을 나타냅니다. 브라우저는 이 요소의 콘텐츠 즉, 보여지는 부분을 표시합니다. 그렇기 때문에, 보여지는 부분의 전역적인 콜백을 정의하는 것이 가능합니다.
