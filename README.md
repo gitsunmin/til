@@ -103,6 +103,9 @@
 - [picture.md](/html/picture.md)
 - [popover-attribute.md](/html/popover-attribute.md)
 
+## http
+- [basic.md](/http/basic.md)
+
 ## javascript
 - [canvas-api.md](/javascript/canvas-api.md)
 - [custom-event.md](/javascript/custom-event.md)
