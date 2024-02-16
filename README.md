@@ -32,6 +32,7 @@
 - [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
 - [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
+- [foit-and-fout.md](/css/foit-and-fout.md)
 - [hsl.md](/css/hsl.md)
 - [object-fit.md](/css/object-fit.md)
 - [placeholder-shown.md](/css/placeholder-shown.md)
