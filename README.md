@@ -143,6 +143,7 @@
 
 ## react
 - [how-to-check-children-in-react-component.md](/react/how-to-check-children-in-react-component.md)
+- [how-to-use-beforeunload.md](/react/how-to-use-beforeunload.md)
 - [overuse-of-useMemo-and-useCallback.md](/react/overuse-of-useMemo-and-useCallback.md)
 - [react-server-component.md](/react/react-server-component.md)
 - [relay.md](/react/relay.md)
