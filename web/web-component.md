@@ -10,7 +10,7 @@
 
 아래는 간단한 웹 컴포넌트를 만드는 예시입니다. 이 예시에서는 'user-card'라는 사용자 카드 컴포넌트를 만듭니다.
 
-1. **HTML 템플릿 정의**
+#### HTML 템플릿 정의
 
 ```html
 <template id="user-card-template">
@@ -28,7 +28,7 @@
 </template>
 ```
 
-2. **커스텀 엘리먼트 정의**
+#### 커스텀 엘리먼트 정의
 
 ```javascript
 class UserCard extends HTMLElement {
@@ -36,10 +36,10 @@ class UserCard extends HTMLElement {
     super();
 
     // Shadow DOM을 연결
-    const shadowRoot = this.attachShadow({ mode: "open" });
+    const shadowRoot = this.attachShadow({ mode: 'open' });
 
     // 템플릿 가져오기 및 복제
-    const template = document.getElementById("user-card-template");
+    const template = document.getElementById('user-card-template');
     const instance = template.content.cloneNode(true);
 
     // Shadow DOM에 템플릿 붙이기
@@ -48,10 +48,10 @@ class UserCard extends HTMLElement {
 }
 
 // 커스텀 엘리먼트 등록
-customElements.define("user-card", UserCard);
+customElements.define('user-card', UserCard);
 ```
 
-3. **HTML 페이지에서 사용**
+#### HTML 페이지에서 사용
 
 ```html
 <user-card>
@@ -59,6 +59,12 @@ customElements.define("user-card", UserCard);
   <span slot="email">hong@example.com</span>
 </user-card>
 ```
+
+#### 커스텀 엘리먼트 LifeCycle
+
+[link](https://javascript.works-hub.com/learn/web-components-api-lifecycle-events-and-custom-events-66668)
+constructor
+connectedCallback
 
 ### 장점
 
