@@ -31,6 +31,7 @@
 - [color-scheme.md](/css/color-scheme.md)
 - [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
+- [flexbox.md](/css/flexbox.md)
 - [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
 - [foit-and-fout.md](/css/foit-and-fout.md)
 - [hsl.md](/css/hsl.md)
