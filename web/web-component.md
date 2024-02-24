@@ -62,9 +62,76 @@ customElements.define('user-card', UserCard);
 
 #### 커스텀 엘리먼트 LifeCycle
 
-[link](https://javascript.works-hub.com/learn/web-components-api-lifecycle-events-and-custom-events-66668)
-constructor
-connectedCallback
+- constructor: 커스텀 엘리먼트가 생성될 때 호출됩니다.
+- connectedCallback: 커스텀 엘리먼트가 DOM에 연결될 때 호출됩니다.
+- adoptedCallback: 커스텀 엘리먼트가 새 문서로 이동할 때 호출됩니다.
+- attributeChangedCallback: 커스텀 엘리먼트의 속성이 추가, 제거, 변경될 때 호출됩니다.
+- disconnectedCallback: 커스텀 엘리먼트가 DOM에서 제거될 때 호출됩니다.
+
+ex)
+```javascript
+class UserCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        .card {
+          border: 1px solid gray;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      </style>
+      <div class="card">
+        <p><slot name="username"></slot></p>
+        <p><slot name="email"></slot></p>
+      </div>
+    `;
+  }
+
+  static get observedAttributes() {
+    return ['username', 'email'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'username') {
+      this.querySelector('[slot="username"]').textContent = newValue;
+    }
+    if (name === 'email') {
+      this.querySelector('[slot="email"]').textContent = newValue;
+    }
+  }
+
+  disconnectedCallback() {
+    console.log('UserCard가 DOM에서 제거되었습니다.');
+  }
+
+  adoptedCallback() {
+    console.log('UserCard가 새 문서로 이동되었습니다.');
+  }
+
+  set username(value) {
+    this.setAttribute('username', value);
+  }
+
+  get username() {
+    return this.getAttribute('username');
+  }
+
+  set email(value) {
+    this.setAttribute('email', value);
+  }
+
+  get email() {
+    return this.getAttribute('email');
+  }
+}
+```
+
+props는 위에서와 같이 getter, setter를 사용하여 구현할 수 있습니다.
 
 ### 장점
 
