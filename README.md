@@ -94,6 +94,7 @@
 - [how-to-use-two-accounts.md](/git/how-to-use-two-accounts.md)
 - [import-only-one-file-from-a-stash.md](/git/import-only-one-file-from-a-stash.md)
 - [key-commit-message-abbreviations.md](/git/key-commit-message-abbreviations.md)
+- [lightweight-tag-and-annotated-tag.md](/git/lightweight-tag-and-annotated-tag.md)
 - [resurrection-of-commit.md](/git/resurrection-of-commit.md)
 - [submodule.md](/git/submodule.md)
 
@@ -124,6 +125,8 @@
 ## library
 - [framer-motion.md](/library/framer-motion.md)
 - [how-to-change-default-url-in-next-auth.md](/library/how-to-change-default-url-in-next-auth.md)
+
+## marketing
 
 ## mobile
 - [android-icon-name.md](/mobile/android-icon-name.md)
