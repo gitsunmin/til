@@ -100,6 +100,9 @@
 - [resurrection-of-commit.md](/git/resurrection-of-commit.md)
 - [submodule.md](/git/submodule.md)
 
+## graphql
+- [thinking-in-graphs.md](/graphql/thinking-in-graphs.md)
+
 ## html
 - [basic.md](/html/basic.md)
 - [good-image-files-on-the-web-SVG.md](/html/good-image-files-on-the-web-SVG.md)
