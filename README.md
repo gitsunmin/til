@@ -9,6 +9,7 @@
 ## browser
 - [checking-the-console-log-in-mobile-chrome.md](/browser/checking-the-console-log-in-mobile-chrome.md)
 - [page-visibility-api.md](/browser/page-visibility-api.md)
+- [reflow-and-repaint.md](/browser/reflow-and-repaint.md)
 - [view-in-html-Layer-3d.md](/browser/view-in-html-Layer-3d.md)
 
 ## cli
@@ -185,5 +186,4 @@
 ## web
 - [a11y.md](/web/a11y.md)
 - [designMode.md](/web/designMode.md)
-- [reflow-and-repaint.md](/web/reflow-and-repaint.md)
 - [web-component.md](/web/web-component.md)
