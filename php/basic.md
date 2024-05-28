@@ -212,3 +212,15 @@ echo($test);
 
 위의 코드에서는 `set_error_handler()` 함수를 사용하여 사용자 정의 에러 핸들러를 등록하고 있습니다. 그리고 `echo($test)` 코드에서 에러가 발생하면 `customError` 함수가 호출됩니다.
 
+
+## String Concatenation
+
+PHP는 문자열 연결을 위해 `.` 연산자를 사용합니다.
+
+```php
+<?php
+$txt1 = "Hello";
+$txt2 = " world!";
+echo $txt1 . $txt2; // Hello world!
+?>
+```
