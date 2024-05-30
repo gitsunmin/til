@@ -7,6 +7,7 @@
 - [prefix-sum-algorithm.md](/algorithm/prefix-sum-algorithm.md)
 
 ## browser
+- [2024-05-new-feature-of-chrome.md](/browser/2024-05-new-feature-of-chrome.md)
 - [checking-the-console-log-in-mobile-chrome.md](/browser/checking-the-console-log-in-mobile-chrome.md)
 - [page-visibility-api.md](/browser/page-visibility-api.md)
 - [reflow-and-repaint.md](/browser/reflow-and-repaint.md)
