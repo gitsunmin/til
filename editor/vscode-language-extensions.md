@@ -56,21 +56,142 @@ Programmatic language features는 설명과 같이 하나의 Server가 필요합
 ### Language Server Protocol (LSP)
 LSP(Language Server Protocol)는 Microsoft에서 제안한 프로토콜로, 언어 도구와 코드 편집기 간의 통신을 표준화합니다. 이 프로토콜이 등장한 이유와 그 역할을 요약하면 다음과 같습니다.
 
-#### 왜 LSP가 생겼을까?
+#### 왜 Language Server(언어 서버) 일까?
+언어 서버는 다양한 프로그래밍 언어의 편집 환경을 강화하는 특별한 종류의 Visual Studio Code 확장 프로그램입니다. 언어 서버를 사용하면 자동 완성, 오류 검사(진단), 정의로 이동 및 VS Code에서 지원되는 기타 여러 언어 기능을 구현할 수 있습니다.
 
-1. 언어 서버와 VS Code의 통합 문제: 언어 서버는 일반적으로 해당 언어의 네이티브 프로그래밍 언어로 구현됩니다. 그러나 VS Code는 Node.js 런타임을 사용하므로, 이 둘의 통합이 어렵습니다.
-2. 리소스 집약적인 작업: 코드의 자동완성, 오류 검사, 정의로 이동 등 언어 기능은 많은 파일을 분석하고 추상 구문 트리를 빌드하며 정적 프로그램 분석을 수행해야 합니다. 이러한 작업은 CPU와 메모리 사용량이 많아 VS Code의 성능에 영향을 줄 수 있습니다.
-3. 다양한 코드 편집기와 언어 도구의 통합 문제: 언어 도구 제공자와 코드 편집기 제공자 모두 서로 다른 API에 적응해야 하므로, 여러 언어를 여러 코드 편집기에 통합하는 작업은 상당한 노력이 필요합니다. 이는 M개의 언어를 N개의 코드 편집기에 통합하려면 M * N의 작업이 필요함을 의미합니다.
+하지만 VS Code에서 언어 기능 지원을 구현하는 과정에서 세 가지 공통적인 문제를 발견했습니다:
 
-#### LSP의 역할
+첫째, 언어 서버는 일반적으로 네이티브 프로그래밍 언어로 구현되므로 Node.js 런타임을 사용하는 VS Code와 통합하는 데 어려움이 있습니다.
 
-LSP는 언어 도구와 코드 편집기 간의 통신을 표준화함으로써 위 문제들을 해결합니다.
+또한 언어 기능은 리소스 집약적일 수 있습니다. 예를 들어, 파일을 올바르게 검증하려면 언어 서버는 대량의 파일을 구문 분석하고, 추상 구문 트리를 구축하고, 정적 프로그램 분석을 수행해야 합니다. 이러한 작업에는 상당한 CPU 및 메모리 사용량이 발생할 수 있으므로 VS Code의 성능에 영향을 미치지 않도록 해야 합니다.
 
-- 언어 독립성: 언어 서버는 어떤 언어로든 구현될 수 있으며, 자체 프로세스에서 실행되어 성능에 영향을 주지 않습니다.
-- 표준화된 통신: LSP를 통해 언어 도구와 코드 편집기는 표준화된 프로토콜로 통신하므로, 다양한 언어 도구와 코드 편집기의 통합이 쉬워집니다.
-- 효율성 향상: LSP를 준수하는 언어 도구는 여러 LSP 준수 코드 편집기와 통합될 수 있고, 반대로 LSP 준수 코드 편집기는 여러 LSP 준수 언어 도구를 쉽게 통합할 수 있습니다.
+마지막으로, 여러 언어 툴링을 여러 코드 편집기와 통합하려면 상당한 노력이 필요할 수 있습니다. 언어 툴링의 입장에서는 서로 다른 API를 사용하는 코드 편집기에 적응해야 합니다. 코드 편집자의 입장에서는 언어 툴링에서 일관된 API를 기대할 수 없습니다. 따라서 N개의 코드 편집기에서 M개의 언어에 대한 언어 지원을 구현하는 것은 M * N의 작업이 됩니다.
 
-결론적으로, LSP는 언어 도구 제공자와 코드 편집기 제공자 모두에게 유리한 표준화된 통신 방법을 제공하여, 통합 작업을 간소화하고 효율성을 높입니다.
+이러한 문제를 해결하기 위해 Microsoft는 언어 도구와 코드 편집기 간의 통신을 표준화하는 언어 서버 프로토콜을 지정했습니다. 이렇게 하면 언어 서버는 언어 서버 프로토콜을 통해 코드 편집기와 통신하므로 어떤 언어로든 구현할 수 있으며 자체 프로세스에서 실행하여 성능 비용을 절감할 수 있습니다. 또한 모든 LSP 호환 언어 툴링은 여러 LSP 호환 코드 편집기와 통합할 수 있으며, 모든 LSP 호환 코드 편집기는 여러 LSP 호환 언어 툴링을 쉽게 선택할 수 있습니다. LSP는 언어 툴링 제공업체와 코드 편집기 공급업체 모두에게 이득입니다!
 
 
+#### 언어 서버 구현하기
 
+VS Code에서 언어 서버는 두 부분으로 나뉩니다:
+
+- 언어 클라이언트: 자바스크립트/타입스크립트로 작성된 일반 VS 코드 확장 프로그램입니다. 이 확장자는 모든 VS 코드 네임스페이스 API에 액세스할 수 있습니다.
+- 언어 서버: 별도의 프로세스에서 실행되는 언어 분석 도구입니다.
+
+위에서 간략하게 설명한 것처럼 언어 서버를 별도의 프로세스에서 실행하면 두 가지 이점이 있습니다:
+
+- 분석 도구는 언어 서버 프로토콜에 따라 언어 클라이언트와 통신할 수 있는 언어라면 어떤 언어로도 구현할 수 있습니다.
+- 언어 분석 도구는 CPU와 메모리 사용량이 많은 경우가 많으므로 별도의 프로세스에서 실행하면 성능 비용을 피할 수 있습니다.
+
+
+vscode에서 언어 서버를 사용하는 방법은 다음과 같습니다.
+
+우선 package.json configurations 설정을 수정합니다.
+
+```json
+{
+  "name": "my-extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Example configuration",
+      "properties": {
+        "myExtension.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the extension"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": [
+          "JavaScript",
+          "javascript"
+        ],
+        "extensions": [
+          ".js",
+          ".mjs",
+          ".cjs",
+          ".ts",
+          ".tsx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  }
+}
+```
+
+이렇게 설정하면 언어 클라이언트와 언어 서버 모두 활성화 됩니다.
+
+그리고 언어 서버를 구현하는 프로세스를 만들어 줍니다.
+
+```typescript
+import * as path from 'path';
+import { workspace, ExtensionContext } from 'vscode';
+
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind
+} from 'vscode-languageclient/node';
+
+let client: LanguageClient;
+
+export function activate(context: ExtensionContext) {
+  // The server is implemented in node
+  let serverModule = context.asAbsolutePath(path.join('server', 'out', 'server.js'));
+  // The debug options for the server
+  // --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
+  let debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
+
+  // If the extension is launched in debug mode then the debug server options are used
+  // Otherwise the run options are used
+  let serverOptions: ServerOptions = {
+    run: { module: serverModule, transport: TransportKind.ipc },
+    debug: {
+      module: serverModule,
+      transport: TransportKind.ipc,
+      options: debugOptions
+    }
+  };
+
+  // Options to control the language client
+  let clientOptions: LanguageClientOptions = {
+    // Register the server for plain text documents
+    documentSelector: [{ scheme: 'file', language: 'plaintext' }],
+    synchronize: {
+      // Notify the server about file changes to '.clientrc files contained in the workspace
+      fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
+    }
+  };
+
+  // Create the language client and start the client.
+  client = new LanguageClient(
+    'languageServerExample',
+    'Language Server Example',
+    serverOptions,
+    clientOptions
+  );
+
+  // Start the client. This will also launch the server
+  client.start();
+}
+
+export function deactivate(): Thenable<void> | undefined {
+  if (!client) {
+    return undefined;
+  }
+  return client.stop();
+}
+```
