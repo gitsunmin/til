@@ -162,6 +162,9 @@
 - [relay.md](/react/relay.md)
 - [the-difference-between-useEffect-and-useLayoutEffect.md](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 
+## scala
+- [basic.md](/scala/basic.md)
+
 ## software_engineering
 - [software-development-principles.md](/software_engineering/software-development-principles.md)
 
