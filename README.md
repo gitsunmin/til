@@ -191,6 +191,7 @@
 ## web
 - [a11y.md](/web/a11y.md)
 - [designMode.md](/web/designMode.md)
+- [how-does-the-internet-work.md](/web/how-does-the-internet-work.md)
 - [web-component.md](/web/web-component.md)
 
 ## webassembly
