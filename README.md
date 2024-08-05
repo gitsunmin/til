@@ -39,6 +39,7 @@
 - [foit-and-fout.md](/css/foit-and-fout.md)
 - [how-to-maintain-the-image-ratio.md](/css/how-to-maintain-the-image-ratio.md)
 - [hsl.md](/css/hsl.md)
+- [ios-safe-area.md](/css/ios-safe-area.md)
 - [object-fit.md](/css/object-fit.md)
 - [placeholder-shown.md](/css/placeholder-shown.md)
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
