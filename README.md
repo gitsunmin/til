@@ -162,6 +162,7 @@
 - [react-server-component.md](/react/react-server-component.md)
 - [relay.md](/react/relay.md)
 - [the-difference-between-useEffect-and-useLayoutEffect.md](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
+- [what-is-new-in-react-19.md](/react/what-is-new-in-react-19.md)
 
 ## scala
 - [basic.md](/scala/basic.md)
