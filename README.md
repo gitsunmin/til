@@ -31,6 +31,7 @@
 - [backdrop-filter.md](/css/backdrop-filter.md)
 - [background-position.md](/css/background-position.md)
 - [box-shadow.md](/css/box-shadow.md)
+- [break-afeter-and-before-and-inside.md](/css/break-afeter-and-before-and-inside.md)
 - [color-scheme.md](/css/color-scheme.md)
 - [conic-gradient.md](/css/conic-gradient.md)
 - [css-functions.md](/css/css-functions.md)
