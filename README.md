@@ -39,6 +39,7 @@
 - [flexbox.md](/css/flexbox.md)
 - [focus-within-and-focus-visible.md](/css/focus-within-and-focus-visible.md)
 - [foit-and-fout.md](/css/foit-and-fout.md)
+- [font-size.md](/css/font-size.md)
 - [grid.md](/css/grid.md)
 - [how-to-maintain-the-image-ratio.md](/css/how-to-maintain-the-image-ratio.md)
 - [hsl.md](/css/hsl.md)
