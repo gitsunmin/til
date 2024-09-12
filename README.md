@@ -49,6 +49,7 @@
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 - [tailwind-css.md](/css/tailwind-css.md)
+- [writing-mode.md](/css/writing-mode.md)
 
 ## database
 - [basic-of-partitioning.md](/database/basic-of-partitioning.md)
