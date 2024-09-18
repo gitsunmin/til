@@ -5,6 +5,7 @@
 - [depth-first-search-algorithm.md](/algorithm/depth-first-search-algorithm.md)
 - [implementation-algorithm.md](/algorithm/implementation-algorithm.md)
 - [prefix-sum-algorithm.md](/algorithm/prefix-sum-algorithm.md)
+- [two-pointer-algorithm.md](/algorithm/two-pointer-algorithm.md)
 
 ## browser
 - [2024-05-new-feature-of-chrome.md](/browser/2024-05-new-feature-of-chrome.md)
