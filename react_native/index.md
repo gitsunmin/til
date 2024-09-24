@@ -62,3 +62,124 @@ const styles = StyleSheet.create({
 });
 ```
 처럼 OS 별로 간편하게 분기를 할 수 있습니다.
+
+## Style
+
+다행스러운 점은 기본적으로 React를 사용할 때 처럼 카멜케이스로 style prop에 주입해주면 바로 사용가능합니다.
+
+다만, 아래와 같은 방식을 권장하는 듯 합니다. 테마 적용이나 스타일을 관리하기 위해서는 아래의 방법이 더 좋아 보이긴 합니다.
+
+```tsx
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+
+const LotsOfStyles = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigBlue}>just bigBlue</Text>
+      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+  },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
+
+export default LotsOfStyles;
+```
+
++ Tailwind CSS 처럼 사용할 수 있는 [NativeWind](https://www.nativewind.dev/)도 있습니다.
+
+
+## Images
+
+이미지를 사용하는 경우 아래와 같이 사용할 수 있습니다.
+
+```tsx
+import React from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+
+const ImageExample = () => {
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('./image.png')}
+        style={styles.image}
+        resizeMode="contain"
+      />
+      <Text style={styles.text}>Hello World!</Text>
+    </View>
+  );
+};
+```
+
+다만, 주의해서 사용해야할 부분이 있다.
+
+```tsx
+// GOOD
+<Image source={require('./my-icon.png')} />;
+
+// BAD
+const icon = this.props.active
+  ? 'my-icon-active'
+  : 'my-icon-inactive';
+<Image source={require('./' + icon + '.png')} />;
+
+// GOOD
+const icon = this.props.active
+  ? require('./my-icon-active.png')
+  : require('./my-icon-inactive.png');
+<Image source={icon} />;
+```
+
+React Native에서는 위 BAD 형태를 권장하지 않습니다. require를 통해서 해당 경로를 미리 알고 있는 것이 좋은 패턴으로 판단하고 있습니다.
+
+### Network Images
+
+```tsx
+// GOOD
+<Image source={{uri: 'https://reactjs.org/logo-og.png'}}
+       style={{width: 400, height: 400}} />
+
+// BAD
+<Image source={{uri: 'https://reactjs.org/logo-og.png'}} />
+
+```
+외부 자원인 경우에는 width와 height를 지정하여 사용해야합니다.
+
+```tsx
+<Image
+  source={{
+    uri: 'https://reactjs.org/logo-og.png',
+    method: 'POST',
+    headers: {
+      Pragma: 'no-cache',
+    },
+    cache: 'only-if-cached',
+    body: 'Your Body goes here',
+  }}
+  style={{width: 400, height: 400}}
+/>
+```
+
+uri를 설정할 때에, 간단한 Network 설정들을 조작할 수 있습니다.
+
+참고로 cache 정책은 아래와 같습니다.
+default: Use the native platforms default strategy.
+reload: The data for the URL will be loaded from the originating source. No existing cache data should be used to satisfy a URL load request.
+force-cache: The existing cached data will be used to satisfy the request, regardless of its age or expiration date. If there is no existing data in the cache corresponding the request, the data is loaded from the originating source.
+only-if-cached: The existing cache data will be used to satisfy a request, regardless of its age or expiration date. If there is no existing data in the cache corresponding to a URL load request, no attempt is made to load the data from the originating source, and the load is considered to have failed.
+
