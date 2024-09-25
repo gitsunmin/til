@@ -183,3 +183,8 @@ reload: The data for the URL will be loaded from the originating source. No exis
 force-cache: The existing cached data will be used to satisfy the request, regardless of its age or expiration date. If there is no existing data in the cache corresponding the request, the data is loaded from the originating source.
 only-if-cached: The existing cache data will be used to satisfy a request, regardless of its age or expiration date. If there is no existing data in the cache corresponding to a URL load request, no attempt is made to load the data from the originating source, and the load is considered to have failed.
 
+
+## Bundling
+
+React Native는 Metro Bundler라는 번들러를 사용하고 있습니다.
+자세한 내용은 [Metro](./metro.md)을 참고하시기 바랍니다.
