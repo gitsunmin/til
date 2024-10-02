@@ -109,6 +109,7 @@
 - [lightweight-tag-and-annotated-tag.md](/git/lightweight-tag-and-annotated-tag.md)
 - [resurrection-of-commit.md](/git/resurrection-of-commit.md)
 - [submodule.md](/git/submodule.md)
+- [switch.md](/git/switch.md)
 
 ## graphql
 - [thinking-in-graphs.md](/graphql/thinking-in-graphs.md)
