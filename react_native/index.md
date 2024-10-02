@@ -63,6 +63,129 @@ const styles = StyleSheet.create({
 ```
 처럼 OS 별로 간편하게 분기를 할 수 있습니다.
 
+## UI Components
+
+### View
+
+View는 가장 기본적인 컨테이너 컴포넌트로, 다른 컴포넌트를 그룹화하고 레이아웃을 구성하는 데 사용됩니다.
+
+```tsx
+import React from 'react';
+import { View } from 'react-native';
+
+const App = () => (
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Text>Hello World</Text>
+  </View>
+);
+```
+
+### Text
+
+Text는 텍스트를 렌더링하는 컴포넌트입니다. iOS와 Android에서 각각 네이티브의 텍스트 렌더링 방식을 사용합니다.
+
+```tsx
+import React from 'react';
+import { Text } from 'react-native';
+
+const App = () => (
+  <Text style={{ fontSize: 20, color: 'blue' }}>Welcome to React Native!</Text>
+);
+```
+
+### TextInput
+
+TextInput은 사용자가 텍스트를 입력할 수 있는 컴포넌트입니다.
+
+
+```tsx
+import React, { useState } from 'react';
+import { TextInput } from 'react-native';
+
+const App = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <TextInput
+      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      onChangeText={text => setValue(text)}
+      value={value}
+      placeholder="Enter text"
+    />
+  );
+};
+```
+
+### ScrollView
+
+ScrollView는 자식 컴포넌트를 스크롤할 수 있게 해주는 컨테이너입니다. 스크롤 가능한 콘텐츠가 많을 때 유용합니다.
+
+```tsx
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+
+const App = () => (
+  <ScrollView>
+    <Text>Content 1</Text>
+    <Text>Content 2</Text>
+    {/* 많은 텍스트들 */}
+  </ScrollView>
+);
+```
+
+### FlatList
+
+FlatList는 많은 데이터 항목을 효율적으로 렌더링하는 컴포넌트로, 가상화된 목록을 생성합니다.
+
+```tsx
+import React from 'react';
+import { FlatList, Text } from 'react-native';
+
+const data = [{ key: '1', value: 'Item 1' }, { key: '2', value: 'Item 2' }];
+
+const App = () => (
+  <FlatList
+    data={data}
+    renderItem={({ item }) => <Text>{item.value}</Text>}
+    keyExtractor={item => item.key}
+  />
+);
+```
+
+### Button
+
+Button은 네이티브의 버튼 UI를 감싸는 컴포넌트입니다.
+
+```tsx
+import React from 'react';
+import { Button } from 'react-native';
+
+const App = () => (
+  <Button
+    onPress={() => alert('Button pressed!')}
+    title="Press Me"
+    color="#841584"
+  />
+);
+```
+
+### TouchableOpacity
+
+TouchableOpacity는 사용자가 클릭할 수 있는 터치 가능한 영역을 제공하며, 클릭 시 불투명도를 조정하는 애니메이션 효과가 적용됩니다.
+
+```tsx
+import React from 'react';
+import { TouchableOpacity, Text } from 'react-native';
+
+const App = () => (
+  <TouchableOpacity onPress={() => alert('TouchableOpacity pressed!')}>
+    <Text>Press Me</Text>
+  </TouchableOpacity>
+);
+```
+
+
+
 ## Style
 
 다행스러운 점은 기본적으로 React를 사용할 때 처럼 카멜케이스로 style prop에 주입해주면 바로 사용가능합니다.
