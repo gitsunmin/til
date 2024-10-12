@@ -5,6 +5,7 @@
 - [depth-first-search-algorithm.md](/algorithm/depth-first-search-algorithm.md)
 - [implementation-algorithm.md](/algorithm/implementation-algorithm.md)
 - [prefix-sum-algorithm.md](/algorithm/prefix-sum-algorithm.md)
+- [tortoise-and-hare-algorithm.md](/algorithm/tortoise-and-hare-algorithm.md)
 - [two-pointer-algorithm.md](/algorithm/two-pointer-algorithm.md)
 
 ## browser
