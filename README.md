@@ -67,6 +67,9 @@
 - [learn-vim.md](/editor/learn-vim.md)
 - [vscode-language-extensions.md](/editor/vscode-language-extensions.md)
 
+## education
+- [taxonomy-of-bloom.md](/education/taxonomy-of-bloom.md)
+
 ## firebase
 - [remote-config.md](/firebase/remote-config.md)
 
