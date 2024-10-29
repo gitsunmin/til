@@ -25,6 +25,7 @@
 - [ast.md](/cs/ast.md)
 - [how-to-change-kernel-parameters.md](/cs/how-to-change-kernel-parameters.md)
 - [how-to-check-system-uptime-and-system-load.md](/cs/how-to-check-system-uptime-and-system-load.md)
+- [optical-character-recognition.md](/cs/optical-character-recognition.md)
 
 ## css
 - [about-css-pseudo-class-the-empty.md](/css/about-css-pseudo-class-the-empty.md)
