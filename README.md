@@ -136,6 +136,7 @@
 
 ## javascript
 - [canvas-api.md](/javascript/canvas-api.md)
+- [closure.md](/javascript/closure.md)
 - [custom-event.md](/javascript/custom-event.md)
 - [document-animate.md](/javascript/document-animate.md)
 - [ECMAScript-2023.md](/javascript/ECMAScript-2023.md)
