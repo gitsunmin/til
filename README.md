@@ -90,6 +90,7 @@
 - [future-and-stream.md](/flutter/future-and-stream.md)
 - [how-to-go-store.md](/flutter/how-to-go-store.md)
 - [learning-dart.md](/flutter/learning-dart.md)
+- [lifecycle.md](/flutter/lifecycle.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
 - [sealed-class.md](/flutter/sealed-class.md)
 - [typedef.md](/flutter/typedef.md)
