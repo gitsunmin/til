@@ -76,6 +76,9 @@
 ## education
 - [taxonomy-of-bloom.md](/education/taxonomy-of-bloom.md)
 
+## experience
+- [garden9-2023](/experience/garden9-2023)
+
 ## firebase
 - [remote-config.md](/firebase/remote-config.md)
 
