@@ -98,6 +98,7 @@
 - [lifecycle.md](/flutter/lifecycle.md)
 - [replace-entry-point-with-cli.md](/flutter/replace-entry-point-with-cli.md)
 - [sealed-class.md](/flutter/sealed-class.md)
+- [tip-for-web-developer.md](/flutter/tip-for-web-developer.md)
 - [typedef.md](/flutter/typedef.md)
 
 ## frontend_framework
