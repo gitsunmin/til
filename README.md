@@ -11,6 +11,7 @@
 ## browser
 - [2024-05-new-feature-of-chrome.md](/browser/2024-05-new-feature-of-chrome.md)
 - [checking-the-console-log-in-mobile-chrome.md](/browser/checking-the-console-log-in-mobile-chrome.md)
+- [how-to-work-browser.md](/browser/how-to-work-browser.md)
 - [page-visibility-api.md](/browser/page-visibility-api.md)
 - [reflow-and-repaint.md](/browser/reflow-and-repaint.md)
 - [view-in-html-Layer-3d.md](/browser/view-in-html-Layer-3d.md)
