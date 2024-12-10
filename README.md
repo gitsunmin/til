@@ -189,6 +189,9 @@
 ## software_engineering
 - [software-development-principles.md](/software_engineering/software-development-principles.md)
 
+## svelte
+- [how-does-svelte-work.md](/svelte/how-does-svelte-work.md)
+
 ## tauri
 - [about-tauri.md](/tauri/about-tauri.md)
 
