@@ -20,6 +20,9 @@
 - [concurrently_js.md](/cli/concurrently_js.md)
 - [latest-unix-tools.md](/cli/latest-unix-tools.md)
 
+## conference
+- [deview-2024.md](/conference/deview-2024.md)
+
 ## cs
 - [aot_and_jit_compiler.md](/cs/aot_and_jit_compiler.md)
 - [ast.md](/cs/ast.md)
