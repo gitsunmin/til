@@ -195,6 +195,7 @@
 - [basic.md](/scala/basic.md)
 
 ## software_engineering
+- [refactoring-with-the-separation-of-oncerns-rinciple.md](/software_engineering/refactoring-with-the-separation-of-oncerns-rinciple.md)
 - [software-development-principles.md](/software_engineering/software-development-principles.md)
 
 ## svelte
