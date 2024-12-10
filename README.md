@@ -14,6 +14,7 @@
 - [how-to-work-browser.md](/browser/how-to-work-browser.md)
 - [page-visibility-api.md](/browser/page-visibility-api.md)
 - [reflow-and-repaint.md](/browser/reflow-and-repaint.md)
+- [service-worker](/browser/service-worker)
 - [view-in-html-Layer-3d.md](/browser/view-in-html-Layer-3d.md)
 
 ## cli
