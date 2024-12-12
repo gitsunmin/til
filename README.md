@@ -128,6 +128,9 @@
 - [submodule.md](/git/submodule.md)
 - [switch.md](/git/switch.md)
 
+## github
+- [how-to-search-for-repo-using-public-api.md](/github/how-to-search-for-repo-using-public-api.md)
+
 ## graphql
 - [thinking-in-graphs.md](/graphql/thinking-in-graphs.md)
 
