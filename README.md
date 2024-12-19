@@ -59,6 +59,7 @@
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 - [tailwind-css.md](/css/tailwind-css.md)
+- [typography.md](/css/typography.md)
 - [writing-mode.md](/css/writing-mode.md)
 
 ## database
