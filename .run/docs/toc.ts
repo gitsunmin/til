@@ -11,10 +11,14 @@ export const makeCategories = (directory: string[]) =>
     directory,
     A.sort((cw, nw) => cw.localeCompare(nw)),
     A.map(
-      flow((dir) => [
-        dir,
-        readDirectory(path.join(DocsConfig.makeOption.root, dir)),
-      ])
+      flow((dir) => {
+        const directories = readDirectory(path.join(DocsConfig.makeOption.root, dir));
+
+        return [
+          dir,
+          directories.map((directory) => directory.includes('.md') ? directory : `${directory}/index.md`),
+        ];
+      })
     )
   );
 
