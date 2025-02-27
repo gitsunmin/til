@@ -72,6 +72,7 @@
 - [git-shortcuts-command-in-zsh.md](/editor/git-shortcuts-command-in-zsh.md)
 - [how-to-go-to-line-in-vscode.md](/editor/how-to-go-to-line-in-vscode.md)
 - [learn-vim.md](/editor/learn-vim.md)
+- [neovim.md](/editor/neovim.md)
 - [vscode-language-extensions.md](/editor/vscode-language-extensions.md)
 
 ## education
