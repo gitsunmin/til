@@ -102,6 +102,7 @@
 - [typedef.md](/flutter/typedef.md)
 
 ## frontend_framework
+- [action-of-nextjs.md](/frontend_framework/action-of-nextjs.md)
 - [difference-between-csrand-ssr.md](/frontend_framework/difference-between-csrand-ssr.md)
 - [docusaurus.md](/frontend_framework/docusaurus.md)
 - [nextjs-v14-summary.md](/frontend_framework/nextjs-v14-summary.md)
