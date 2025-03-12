@@ -105,6 +105,7 @@
 - [action-of-nextjs.md](/frontend_framework/action-of-nextjs.md)
 - [difference-between-csrand-ssr.md](/frontend_framework/difference-between-csrand-ssr.md)
 - [docusaurus.md](/frontend_framework/docusaurus.md)
+- [how-to-use-browserslist-on-nextjs.md](/frontend_framework/how-to-use-browserslist-on-nextjs.md)
 - [nextjs-v14-summary.md](/frontend_framework/nextjs-v14-summary.md)
 - [nextjs.md](/frontend_framework/nextjs.md)
 
