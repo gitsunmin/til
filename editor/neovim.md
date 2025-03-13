@@ -10,3 +10,12 @@ MacOS에서...
 ```bash
 brew install neovim
 ```
+
+## Vim-Plug 설치
+
+vim-plug은 vim에서 플러그인을 설치하기 위한 패키지 관리자입니다.
+
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
