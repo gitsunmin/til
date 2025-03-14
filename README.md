@@ -54,6 +54,7 @@
 - [ios-safe-area.md](/css/ios-safe-area.md)
 - [object-fit.md](/css/object-fit.md)
 - [placeholder-shown.md](/css/placeholder-shown.md)
+- [problem-of-sticky.md](/css/problem-of-sticky.md)
 - [pseudo-class-lang.md](/css/pseudo-class-lang.md)
 - [replaced-elements.md](/css/replaced-elements.md)
 - [tailwind-css.md](/css/tailwind-css.md)
