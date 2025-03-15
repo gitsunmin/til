@@ -23,12 +23,12 @@
   "homepage": "https://github.com/gitsunmin/til#readme",
   "devDependencies": {
     "@mobily/ts-belt": "^3.13.1",
-    "@types/node": "^22.13.1",
-    "bun-types": "^1.2.2",
+    "@types/node": "^22.13.10",
+    "bun-types": "^1.2.5",
     "chalk": "^5.4.1",
     "husky": "^9.1.7",
     "ignore": "^7.0.3",
     "ts-pattern": "^5.6.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   }
 }
