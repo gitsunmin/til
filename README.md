@@ -196,6 +196,7 @@
 - [overuse-of-useMemo-and-useCallback.md](/react/overuse-of-useMemo-and-useCallback.md)
 - [react-server-component.md](/react/react-server-component.md)
 - [relay.md](/react/relay.md)
+- [scroll-restoration.md](/react/scroll-restoration.md)
 - [the-difference-between-useEffect-and-useLayoutEffect.md](/react/the-difference-between-useEffect-and-useLayoutEffect.md)
 - [what-is-new-in-react-19.md](/react/what-is-new-in-react-19.md)
 
