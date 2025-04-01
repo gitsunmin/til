@@ -167,6 +167,7 @@
 - [the-easiest-way-to-create-uuid-in-js.md](/javascript/the-easiest-way-to-create-uuid-in-js.md)
 
 ## library
+- [es-git.md](/library/es-git.md)
 - [framer-motion.md](/library/framer-motion.md)
 - [gritql.md](/library/gritql.md)
 - [how-to-change-default-url-in-next-auth.md](/library/how-to-change-default-url-in-next-auth.md)
