@@ -9,6 +9,7 @@ import * as path from "path";
 
 const tree = readDirectory(DocsConfig.makeOption.root);
 
+
 const directory = ignore()
   .add(
     readFile(

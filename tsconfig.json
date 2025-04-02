@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
+    "moduleResolution": "node",
     "strict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
@@ -11,6 +12,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
 
     "types": ["bun-types"],
     "lib": ["esnext"],
