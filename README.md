@@ -174,6 +174,9 @@
 - [nuqs.md](/library/nuqs.md)
 - [style-dictionary.md](/library/style-dictionary.md)
 
+## mcp
+- [what-is-mcp.md](/mcp/what-is-mcp.md)
+
 ## mobile
 - [android-icon-name.md](/mobile/android-icon-name.md)
 
