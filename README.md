@@ -173,6 +173,7 @@
 - [how-to-change-default-url-in-next-auth.md](/library/how-to-change-default-url-in-next-auth.md)
 - [nuqs.md](/library/nuqs.md)
 - [style-dictionary.md](/library/style-dictionary.md)
+- [turborepo.md](/library/turborepo.md)
 
 ## mcp
 - [what-is-mcp.md](/mcp/what-is-mcp.md)
