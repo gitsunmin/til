@@ -237,7 +237,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 
 const ImageExample = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <Image
         source={require('./image.png')}
         style={styles.image}
