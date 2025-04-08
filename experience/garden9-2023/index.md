@@ -1,16 +1,3 @@
----
-title: 정원사들 시즌9 참여 후기
-image: /images/blogs/default_thumbnail.webp
-summary: 정원사들 시즌9에 참여한 이유와 후기를 작성하였습니다.
-description: 정원사들 시즌9에 참여한 이유와 후기를 작성하였습니다.
-author: Gitsunmin
-draft: false
-date: 2023-12-20 12:00:00
-math: true
-tags:
-  - Activity
----
-
 ## 서론
 
 GitHub에서 커밋이 발생할 때마다 생기는 초록색 박스를 '잔디'로 비유하곤 합니다. 매일 Commit을 하여, 잔디를 꽉 채운 '정원'을 가꾸는 '정원사들' 활동에 대해 이야기하고자 합니다. 이 글에서는 제가 이 활동에 참여하게 된 동기와 경험을 공유하려고 합니다.
