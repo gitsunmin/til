@@ -160,6 +160,7 @@
 - [document-animate.md](/javascript/document-animate.md)
 - [ECMAScript-2023.md](/javascript/ECMAScript-2023.md)
 - [iterable.md](/javascript/iterable.md)
+- [javascript-trick-1.md](/javascript/javascript-trick-1.md)
 - [object-is.md](/javascript/object-is.md)
 - [performance-comparison-of-array.find-and-array.indexOf.md](/javascript/performance-comparison-of-array.find-and-array.indexOf.md)
 - [promise-all-settled-and-promise-all.md](/javascript/promise-all-settled-and-promise-all.md)
