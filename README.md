@@ -159,6 +159,7 @@
 - [custom-event.md](/javascript/custom-event.md)
 - [document-animate.md](/javascript/document-animate.md)
 - [ECMAScript-2023.md](/javascript/ECMAScript-2023.md)
+- [hidden-class.md](/javascript/hidden-class.md)
 - [iterable.md](/javascript/iterable.md)
 - [javascript-trick-1.md](/javascript/javascript-trick-1.md)
 - [object-is.md](/javascript/object-is.md)
