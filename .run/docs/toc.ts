@@ -1,4 +1,5 @@
 import * as path from "path";
+import * as fs from "fs";
 
 import { pipe, flow, F, A, S } from "@mobily/ts-belt";
 import { match } from "ts-pattern";
@@ -12,14 +13,27 @@ export const makeCategories = (directory: string[]) =>
     A.sort((cw, nw) => cw.localeCompare(nw)),
     A.map(
       flow((dir) => {
-        const directories = readDirectory(path.join(DocsConfig.makeOption.root, dir));
+        const fullPath = path.join(DocsConfig.makeOption.root, dir);
+        const stat = fs.statSync(fullPath); // 파일/디렉토리 구분
 
-        return [
-          dir,
-          directories.map((directory) => directory.includes('.md') ? directory : `${directory}/index.md`),
-        ];
+        if (stat.isDirectory()) {
+          // 디렉토리인 경우, 내부 파일/디렉토리를 읽음
+          const directories = readDirectory(fullPath);
+          return [
+            dir,
+            directories.map((directory) =>
+              directory.includes(".mdx") ? directory : `${directory}/index.mdx`
+            ),
+          ];
+        } else if (stat.isFile() && dir.endsWith(".mdx")) {
+          // 파일인 경우, 그대로 반환
+          return [dir];
+        } else {
+          return []; // 무시
+        }
       })
-    )
+    ),
+    A.filter((entry) => entry.length > 0) // 빈 배열 제거
   );
 
 const makeContent = (category: (string | string[])[]) =>
