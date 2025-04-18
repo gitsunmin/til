@@ -10,6 +10,7 @@ position: sticky는 상대적 위치와 고정 위치의 특성을 모두 가진
 
 사용 방법: position: sticky를 적용할 때는 반드시 top, left, right, bottom 중 하나 이상의 offset 속성을 함께 지정해야 합니다. 지정한 offset 위치가 없다면 일반적인 relative처럼 동작해서 아무 효과가 없습니다 ￼. 예를 들어 아래와 같이 CSS를 작성할 수 있습니다:
 
+```html
 <!-- HTML 예시 -->
 <div class="container">
   <h2 class="sticky-header">고정 헤더 영역</h2>
@@ -17,6 +18,9 @@ position: sticky는 상대적 위치와 고정 위치의 특성을 모두 가진
   <p>긴 내용 ...</p>
   <!-- 내용이 충분히 길어 스크롤바가 생긴다고 가정 -->
 </div>
+```
+
+```css
 
 /* CSS 예시 */
 .container {
@@ -29,6 +33,7 @@ position: sticky는 상대적 위치와 고정 위치의 특성을 모두 가진
   background: #ffea00;
   padding: 10px;
 }
+```;
 
 위 예시에서 .sticky-header 요소는 컨테이너 내에서 스크롤되다가, 컨테이너의 상단에 도달하면 상단에 고정되어 더 이상 위로 사라지지 않습니다. 이처럼 스크롤되는 영역 내에서 중요한 헤더나 메뉴 등을 항상 보이도록 할 때 sticky를 활용할 수 있습니다 ￼. (참고로 모든 최신 브라우저에서 position: sticky를 지원하지만, Internet Explorer에서는 지원하지 않으므로 IE에서는 그냥 static처럼 동작합니다 ￼.)
 
