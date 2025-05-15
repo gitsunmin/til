@@ -1,0 +1,110 @@
+# Shapshot Test
+
+### 1. 스냅샵 테스트란?
+
+* 스냅샵 테스트는 **컨포넌트나 함수의 출력 결과를 파일로 저장하고, 이후 실행 시 결과와 비교**하여 변경 유물을 감지하는 테스트 방식이다.
+* 흐름이 UI 컨포넌트의 DOM 구조나 함수의 문자열 반환값 등을 검증하는 데 활용된다.
+
+---
+
+### 2. 동작 환혈 이해
+
+```bash
+# 첫 실행 - 스냅샵이 없다면 자동 생성
+bun test
+
+# 이후 실행 - 스냅샵과 비교
+bun test
+
+# 스냅샵을 의도적으로 갱신
+bun test -u
+```
+
+* `.snap` 파일은 `__snapshots__/파일명.snap` 경로에 저장된다.
+* `toMatchSnapshot()` 메서드가 스냅샵 비교를 수행한다.
+
+---
+
+### 3. Snapshot Test의 동작 개발 가설
+
+```ts
+if (!snapshotExists()) {
+  writeSnapshot(currentOutput); // 생성
+} else {
+  if (snapshot !== currentOutput) {
+    if (updateFlag) {
+      writeSnapshot(currentOutput); // 갱신
+    } else {
+      throw new Error("Snapshot mismatch"); // 실패
+    }
+  }
+}
+```
+
+---
+
+### 4. React 컨포넌트에서의 스냅샵 테스트
+
+* Vitest에서는 React 컨포넌트를 스냅샵 테스트할 수 있고, \*\*반드시 React Testing Library(RTL)\*\*를 사용해야 하는 것은 아니다.
+* 그러나 \*\*실제 DOM 렌더링 결과를 기반으로 스냅샵을 지적하고 싶다면 RTL을 사용하는 것이 사실상 표준이다.
+
+#### React Testing Library 예시
+
+```tsx
+import { render } from '@testing-library/react';
+import { MyComponent } from './MyComponent';
+import { describe, it, expect } from 'vitest';
+
+describe('MyComponent', () => {
+  it('matches snapshot', () => {
+    const { container } = render(<MyComponent />);
+    expect(container).toMatchSnapshot();
+  });
+});
+```
+
+#### 대안: `react-dom/server`, `react-test-renderer`
+
+```tsx
+// renderToString 방식
+import { renderToString } from 'react-dom/server';
+const html = renderToString(<MyComponent />);
+expect(html).toMatchSnapshot();
+```
+
+```tsx
+// react-test-renderer 방식
+import renderer from 'react-test-renderer';
+const tree = renderer.create(<MyComponent />).toJSON();
+expect(tree).toMatchSnapshot();
+```
+
+---
+
+### 5. Serializer란?
+
+* 스냅샵에 저장되는 내용을 **사랑이 읽기 좋게 직렬화하는 함수 또는 규칙 집합**.
+* 기본적으로 내장된 Serializer가 있으며, 필요에 따라 `addSerializer()`로 커스터링화 가능.
+
+```ts
+import { addSerializer } from 'vitest';
+
+addSerializer({
+  test: (val) => typeof val === 'string' && val.startsWith('>>>'),
+  print: (val) => `"CUSTOM_SERIALIZED: ${val}"`,
+});
+```
+
+---
+
+### 6. 요약 정보 정보
+
+| 항목         | 내용                                    |
+| ---------- | ------------------------------------- |
+| 스냅샵 생성     | `bun test` 첫 실행 시 자동 생성               |
+| 비교 동작      | 이후 테스트 시 기존 스냅샵과 자동 비교                |
+| 갱신 명령어     | `bun test -u` 또는 `--update`           |
+| React 테스트  | React Testing Library 사용 권장 (필수는 아니다) |
+| Serializer | 스냅샵 직렬화 방식 정의 및 커스터링 가능               |
+
+---
