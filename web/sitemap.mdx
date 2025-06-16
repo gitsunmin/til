@@ -1,0 +1,147 @@
+# Sitemap
+
+## Sitemap이란?
+
+* Sitemap은 웹사이트의 **페이지 구조를 검색엔진에 알려주는 XML 파일**이다.
+* 검색엔진은 sitemap을 통해 **모든 중요한 URL**을 빠르게 발견하고 크롤링할 수 있다.
+* 일반적으로 `sitemap.xml`이라는 이름으로 사용되며, 도메인 루트에 위치한다 (`https://example.com/sitemap.xml`).
+
+---
+
+## 기본 구조
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2025-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+### 주요 태그 설명
+
+| 태그             | 필수 여부 | 설명                               |
+| -------------- | ----- | -------------------------------- |
+| `<loc>`        | ✅ 필수  | 절대 URL 주소                        |
+| `<lastmod>`    | ⭕ 선택  | 마지막 수정일 (ISO 8601 형식)            |
+| `<changefreq>` | ⭕ 선택  | 페이지 변경 빈도 (`daily`, `weekly`, 등) |
+| `<priority>`   | ⭕ 선택  | 상대적 중요도 (0.0 \~ 1.0)             |
+
+---
+
+## 제한 사항
+
+* **최대 URL 수**: 하나의 sitemap에는 최대 **50,000개 URL**까지 포함 가능
+* **파일 크기 제한**: 압축되지 않은 상태로 **50MB 이하**
+* 이를 초과하면 sitemap을 나누고 \*\*`sitemap_index.xml`\*\*로 묶어서 제출해야 함
+
+### Sitemap Index 예시
+
+```xml
+<sitemapindex xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://example.com/sitemap-1.xml</loc>
+    <lastmod>2025-06-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://example.com/sitemap-2.xml</loc>
+    <lastmod>2025-06-16</lastmod>
+  </sitemap>
+</sitemapindex>
+```
+
+---
+
+## SPA에서 Sitemap 생성 방법
+
+SPA(예: React + Vite 등)를 사용하는 경우에는 sitemap을 수동으로 작성하거나 빌드 시 생성하는 방식이 필요하다. 반면, **Next.js**나 **Astro**와 같은 프레임워크는 **정적 사이트 생성을 지원하므로 sitemap 생성 기능이 내장되어 있거나 플러그인으로 쉽게 확장 가능**하다.
+
+즉, TanStack Router와 같은 순수 SPA 라우터를 사용하는 경우에는 sitemap을 직접 생성하거나, Node 스크립트를 활용한 자동화가 필요하다.
+
+### 방법 1: `sitemap` 패키지 사용
+
+1. 설치
+
+```bash
+npm install sitemap
+```
+
+2. 스크립트 작성 (`scripts/sitemap-generator.js`)
+
+```js
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createWriteStream } = require('fs');
+
+async function generateSitemap() {
+  const sitemap = new SitemapStream({ hostname: 'https://example.com' });
+
+  sitemap.write({ url: '/', changefreq: 'weekly', priority: 1.0 });
+  sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
+
+  sitemap.end();
+  const data = await streamToPromise(sitemap);
+  createWriteStream('./public/sitemap.xml').end(data);
+}
+
+generateSitemap();
+```
+
+3. 빌드시 실행하도록 연결
+
+```json
+"scripts": {
+  "generate:sitemap": "node scripts/sitemap-generator.js",
+  "build": "npm run generate:sitemap && vite build"
+}
+```
+
+### 방법 2: 동적 라우트 적용 (예: `/blog/:slug`)
+
+* API로 슬러그 목록을 받아 동적으로 sitemap에 추가
+
+---
+
+## 🤖 검색엔진에 제출
+
+* [Google Search Console](https://search.google.com/search-console/)에 접속 → 도메인 인증 → "사이트맵" 메뉴에 `sitemap.xml` 제출
+* `robots.txt` 파일에 경로 명시
+
+```txt
+Sitemap: https://example.com/sitemap.xml
+```
+
+---
+
+## 🧠 기타 확장
+
+* **다국어 지원**: `<xhtml:link rel="alternate" hreflang="..." />` 사용
+* **이미지 sitemap**: `<image:image>` 태그 사용
+* **동영상, 뉴스** 등의 특별 sitemap도 존재함
+
+---
+
+## ✅ 요약 정리
+
+| 항목            | 설명                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------- |
+| 파일 형식         | XML (표준 구조 따라야 함)                                                                  |
+| URL 수         | 50,000개 이하                                                                         |
+| 파일 크기         | 50MB 이하 (미압축 기준)                                                                   |
+| robots.txt 연동 | `Sitemap: https://example.com/sitemap.xml` 명시 필요                                   |
+| 제출 경로         | Google Search Console 등                                                            |
+| 동적 생성 가능      | Node.js + `sitemap` 패키지 이용 가능                                                      |
+| 다국어 처리        | `<xhtml:link hreflang="..." />` 태그를 이용해 언어별 URL을 명시하고, 동일 콘텐츠에 대해 언어 버전을 함께 연결해야 함 |
+| 항목            | 설명                                                                                 |
+| ------        | ------                                                                             |
+| 파일 형식         | XML (표준 구조 따라야 함)                                                                  |
+| URL 수         | 50,000개 이하                                                                         |
+| 파일 크기         | 50MB 이하 (미압축 기준)                                                                   |
+| robots.txt 연동 | `Sitemap: https://example.com/sitemap.xml` 명시 필요                                   |
+| 제출 경로         | Google Search Console 등                                                            |
+| 동적 생성 가능      | Node.js + `sitemap` 패키지 이용 가능                                                      |
+
+---
