@@ -1,0 +1,84 @@
+# Sounds and Recording on Web
+
+
+---
+
+## 1. 소리의 본질: 파형(Waveform)
+
+* 소리는 공기의 압력 변화가 시간에 따라 전파되는 \*\*파동(wave)\*\*이다.
+* 디지털로는 시간에 따른 진폭(Amplitude)으로 표현된다.
+* **Waveform**은 소리의 시간 축과 진폭 축을 표현한 가장 기본적인 시각화 방식이다.
+* 주기(Frequency)가 짧을수록 높은 음, 길수록 낮은 음을 의미한다.
+
+---
+
+## 2. 주파수 분석: 푸리에 변환 (Fourier Transform)
+
+* 복잡한 파형을 단순한 주파수 성분들의 조합으로 분해하는 수학적 도구이다.
+* \*\*FFT(Fast Fourier Transform)\*\*는 이를 빠르게 계산할 수 있는 알고리즘이다.
+* \*\*주파수 스펙트럼(Spectrum)\*\*은 각 주파수 대역에 얼마나 강한 에너지가 존재하는지를 시각화한다.
+* Web Audio API의 `AnalyserNode.getByteFrequencyData()`로 구현 가능하다.
+
+---
+
+## 3. 시간 + 주파수: 스펙트로그램 (Spectrogram)
+
+* 스펙트럼을 시간 축에 따라 변화하는 형태로 표현한 시각화 방법.
+* x축: 시간 / y축: 주파수 / 색상: 에너지 또는 볼륨
+* 소리의 세부 구조나 감정적 특징 분석에 유용함.
+* 음성 인식, 새소리 분류, 음악 분류 등의 ML 분야에서 활용됨.
+
+---
+
+## 4. 음의 높이(Pitch) 표현
+
+* 음의 높이는 \*\*기본 주파수(Fundamental Frequency)\*\*에 의해 결정됨.
+* A4는 440Hz, 반음마다 2^(1/12)씩 차이 남.
+* Pitch Detection 알고리즘: Autocorrelation, YIN, Harmonic Product Spectrum 등
+* 실제 구현 시 Web Audio API의 주파수 분석 + 커스텀 알고리즘을 결합
+
+---
+
+## 5. 볼륨/에너지 표현
+
+* 소리의 크기는 RMS(Root Mean Square) 등의 수학적 계산으로 나타냄
+* `AnalyserNode.getByteTimeDomainData()`도 사용 가능
+* 실시간 볼륨 바, LED Meter 구현에 활용
+
+---
+
+## 6. 웹 시각화 구현 예시 (Web Audio API)
+
+```js
+const analyser = audioContext.createAnalyser();
+analyser.fftSize = 2048;
+const dataArray = new Uint8Array(analyser.frequencyBinCount);
+analyser.getByteFrequencyData(dataArray);
+```
+
+* 위 데이터를 기반으로 Canvas나 SVG로 시각화 가능
+* 주파수 막대, 파형 애니메이션 등 구현 가능
+
+---
+
+## 7. 관련 이론 및 키워드 정리
+
+| 분야    | 키워드                             |
+| ----- | ------------------------------- |
+| 신호 처리 | FFT, STFT, Windowing            |
+| 음향학   | Frequency, Amplitude, Phase     |
+| 청각 이론 | Equal-loudness curve, Mel scale |
+| 음악 이론 | Pitch, Timbre, Overtones        |
+| ML 활용 | MFCC, Spectrograms, CNN         |
+
+---
+
+## 8. 추천 라이브러리/도구
+
+* `Tone.js` : 음악 시퀀싱, 신디사이저 기능까지 포함한 Web Audio 라이브러리
+* `Howler.js` : 오디오 재생 중심의 견고한 JS 라이브러리
+* `use-sound` : React에서 Howler.js 기반의 훅 제공
+* `p5.sound` : 시각화와 함께 배우기에 유용
+* `Sonic Visualiser` : 실제 오디오 데이터를 시각화할 수 있는 툴
+
+---
