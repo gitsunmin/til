@@ -1,0 +1,70 @@
+# Pothos
+
+Pothos는 TypeScript로 작성된 GraphQL 스키마를 생성하기 위한 강력하고 유연한 라이브러리입니다. 이 라이브러리는 GraphQL SDL(Schema Definition Language)을 직접 작성하지 않고도 TypeScript의 타입 정보를 활용하여 스키마를 정의할 수 있도록 도와줍니다.
+
+## 주요 특징
+
+1. **타입 안전성(Type-Safe)**: TypeScript의 타입 정보를 활용하여 스키마를 정의하므로, 타입 안전성을 보장합니다.
+2. **플러그인 기반**: 인증, 데이터 로딩, 필드 권한 등 다양한 기능을 플러그인으로 확장할 수 있습니다.
+3. **간결한 API**: 복잡한 GraphQL 스키마를 간단하고 직관적으로 작성할 수 있는 API를 제공합니다.
+4. **Relay 및 Prisma 지원**: Relay 스타일의 커넥션 및 Prisma와의 통합을 지원합니다.
+
+## 설치 및 시작하기
+
+Pothos를 사용하려면 먼저 패키지를 설치해야 합니다. 다음은 설치 명령어입니다:
+
+```bash
+npm install @pothos/core graphql
+```
+
+설치 후, 간단한 GraphQL 스키마를 생성하는 예제는 다음과 같습니다:
+
+```typescript
+import { createYoga } from 'graphql-yoga';
+import { createServer } from 'node:http';
+import SchemaBuilder from '@pothos/core';
+
+const builder = new SchemaBuilder({});
+
+builder.queryType({
+  fields: (t) => ({
+    hello: t.string({
+      args: {
+        name: t.arg.string(),
+      },
+      resolve: (parent, { name }) => `hello, ${name || 'World'}`,
+    }),
+  }),
+});
+
+const yoga = createYoga({
+  schema: builder.toSchema(),
+});
+
+const server = createServer(yoga);
+
+server.listen(3000, () => {
+  console.log('http://localhost:3000/graphql 에 접속하세요');
+});
+```
+
+# 플러그인
+
+- [Add GraphQL](https://pothos-graphql.dev/docs/plugins/add-graphql): 기존 GraphQL 타입을 스키마에 추가합니다
+- [Auth](https://pothos-graphql.dev/docs/plugins/scope-auth): 전역, 타입 수준 또는 필드 수준의 권한 검사를 스키마에 추가합니다
+- [Complexity](https://pothos-graphql.dev/docs/plugins/complexity): 쿼리의 복잡도를 정의하고 제한하는 플러그인
+- [Dataloader](https://pothos-graphql.dev/docs/plugins/dataloader): n+1 쿼리를 방지하기 위해 타입과 필드에 대한 데이터 로더를 빠르게 정의합니다.
+    - n+1 문제는 데이터베이스 쿼리 최적화와 관련된 성능 문제로, 하나의 기본 쿼리(1)로 데이터를 가져온 후, 각 데이터 항목에 대해 추가 쿼리(n)가 실행되는 상황을 말합니다. 이로 인해 데이터가 많아질수록 쿼리 수가 기하급수적으로 증가하여 성능 저하를 초래합니다.
+- [Directives](https://pothos-graphql.dev/docs/plugins/directives): 타입 안전한 방식으로 기존 GraphQL 디렉티브와 통합합니다.
+- [Drizzle](https://pothos-graphql.dev/docs/plugins/drizzle): Drizzle의 관계형 쿼리 빌더 API를 통해 효율적인 쿼리를 지원하는 플러그인
+- [Errors](https://pothos-graphql.dev/docs/plugins/errors): GraphQL 스키마에 오류 타입을 쉽게 포함하고 이를 리졸버에 연결하는 플러그인
+- [Grafast](https://pothos-graphql.dev/docs/plugins/grafast): 스키마에서 리졸버 대신 Grafast 플랜을 사용하는 플러그인
+- [Mocks](https://pothos-graphql.dev/docs/plugins/mocks): 더 쉬운 테스트를 위한 목 리졸버 추가
+- [Prisma](https://pothos-graphql.dev/docs/plugins/prisma): Prisma와의 효율적인 통합을 위한 플러그인으로, n+1 문제를 해결하고 쿼리를 더 효율적으로 처리합니다
+- [Relay](https://pothos-graphql.dev/docs/plugins/relay): Relay 스타일의 노드 및 연결을 정의하기 위한 간단한 빌더 메서드와 커서 기반 페이지네이션을 위한 유용한 유틸리티를 제공합니다.
+- [Simple Objects](https://pothos-graphql.dev/docs/plugins/simple-objects): 리졸버나 수동 타입 정의 없이 간단한 객체 타입을 정의합니다.
+- [Smart Subscriptions](https://pothos-graphql.dev/docs/plugins/smart-subscriptions): 데이터 변경 시 실시간 업데이트를 받을 수 있도록 그래프의 모든 부분을 구독 가능하게 만듭니다.
+- [Sub-Graph](https://pothos-graphql.dev/docs/plugins/sub-graph): 내부 및 외부 API 간에 코드를 쉽게 공유할 수 있도록 그래프의 여러 하위 집합을 빌드합니다.
+- [Tracing](https://pothos-graphql.dev/docs/plugins/tracing): OpenTelemetry, NewRelic, Century, 로깅 및 사용자 정의 트레이서를 지원하는 리졸버 실행 추적 추가
+- [Validation](https://pothos-graphql.dev/docs/plugins/validation): Zod, Valibot, ArkType과 같은 StandardSchemaV1 호환 라이브러리를 사용한 검증
+- [With-Input](https://pothos-graphql.dev/docs/plugins/with-input): 인라인 입력 객체로 필드를 정의합니다
