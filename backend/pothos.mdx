@@ -48,7 +48,7 @@ server.listen(3000, () => {
 });
 ```
 
-# 플러그인
+## 플러그인
 
 - [Add GraphQL](https://pothos-graphql.dev/docs/plugins/add-graphql): 기존 GraphQL 타입을 스키마에 추가합니다
 - [Auth](https://pothos-graphql.dev/docs/plugins/scope-auth): 전역, 타입 수준 또는 필드 수준의 권한 검사를 스키마에 추가합니다
@@ -68,3 +68,38 @@ server.listen(3000, () => {
 - [Tracing](https://pothos-graphql.dev/docs/plugins/tracing): OpenTelemetry, NewRelic, Century, 로깅 및 사용자 정의 트레이서를 지원하는 리졸버 실행 추적 추가
 - [Validation](https://pothos-graphql.dev/docs/plugins/validation): Zod, Valibot, ArkType과 같은 StandardSchemaV1 호환 라이브러리를 사용한 검증
 - [With-Input](https://pothos-graphql.dev/docs/plugins/with-input): 인라인 입력 객체로 필드를 정의합니다
+
+## relay
+
+Pothos의 Relay 플러그인은 Relay 스타일의 노드 및 연결을 정의하기 위한 간단한 빌더 메서드와 커서 기반 페이지네이션을 위한 유용한 유틸리티를 제공합니다. 이를 통해 GraphQL API에서 Relay 사양을 쉽게 구현할 수 있습니다.
+
+```typescript
+// Using object refs
+const User = builder.objectRef<UserType>('User');
+// Or using a class
+class User {
+  id: string;
+  name: string;
+}
+
+builder.node(User, {
+  // define an id field
+  id: {
+    resolve: (user) => user.id,
+    // other options for id field can be added here
+  },
+
+  // Define only one of the following methods for loading nodes by id
+  loadOne: (id) => loadUserByID(id),
+  loadMany: (ids) => loadUsers(ids),
+  loadWithoutCache: (id) => loadUserByID(id),
+  loadManyWithoutCache: (ids) => loadUsers(ids),
+
+  // if using a class instaed of a ref, you will need to provide a name
+  name: 'User',
+  fields: (t) => ({
+    name: t.exposeString('name'),
+  }),
+});
+```
+
