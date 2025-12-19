@@ -1,0 +1,46 @@
+# Perspective
+
+`perspective`는 원근법을 설명할 때 사용되는 용어로서 사물을 3D 공간에서 바라볼 때의 깊이와 거리감을 나타냅니다. CSS에서 `perspective` 속성은 3D 변환이 적용된 요소에 원근 효과를 부여하는 데 사용됩니다.
+
+## 기본 문법
+
+```css
+perspective: <length>;
+```
+
+- `<length>`: 원근의 거리(픽셀 등). 값이 작을수록 원근 효과가 강해지고, 값이 클수록 효과가 약해집니다.
+
+## 예시
+
+```css
+.container {
+  perspective: 600px;
+}
+.child {
+  transform: rotateY(45deg);
+}
+```
+
+```html
+<div class="container">
+  <div class="child">3D Box</div>
+</div>
+```
+
+- 위 예시에서 `.container`에 `perspective`를 적용하면, 내부의 `.child` 요소에 3D 변환(`rotateY`)을 줄 때 원근감이 생깁니다.
+
+## 주요 특징
+
+- `perspective`는 **컨테이너(부모 요소)**에 적용해야 자식 요소의 3D 변환에 원근 효과가 적용됩니다.
+- `perspective` 값을 모니터에서 사용자가 바라보는 거리로 생각할 수 있습니다.
+    - 값이 작을수록(예: 200px) 더 극적인 원근 효과가 나타나고, 값이 클수록(예: 2000px) 평면에 가까워집니다.
+- `perspective`는 3D 변환이 적용된 요소에만 영향을 줍니다.
+
+## 관련 속성
+
+- `perspective-origin`: 원근의 기준점을 설정합니다. 기본값은 `50% 50%`(중앙).
+- `transform-style: preserve-3d`: 자식 요소에 3D 변환을 계승하려면 사용합니다.
+
+## 참고
+
+- [MDN: perspective](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/perspective)
