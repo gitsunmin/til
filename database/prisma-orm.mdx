@@ -4,117 +4,106 @@
 
 ---
 
-# [기술 가이드] 현대적 데이터베이스 관리를 위한 Prisma ORM 완벽 정리
-
 ## 목차
 
-1. Prisma 개요 및 최신 버전(v7)의 특징
+1. Prisma 개요 및 최신 v7.x의 특징
 2. Prisma의 3대 핵심 구성 요소
 3. 데이터베이스 연결 및 Datasource 설정
-4. Prisma Client 주요 메서드와 활용법
-5. Prisma Migrate를 이용한 스키마 관리
-6. Prisma Studio를 통한 시각적 데이터 관리
-7. 환경 분리 및 위기 대처 전략
+4. Prisma Schema Language(PSL) 상세 문법
+5. Prisma Client 주요 메서드와 활용법
+6. Prisma Migrate를 이용한 스키마 관리
+7. Prisma Studio를 통한 시각적 데이터 관리
+8. 환경 분리 및 위기 대처 전략
 
 ---
 
-## 1. Prisma 개요 및 최신 버전(v7)의 특징
+## 1. Prisma 개요 및 최신 v7.x의 특징
 
-Prisma는 Node.js와 TypeScript 환경에서 사용할 수 있는 차세대 ORM(Object-Relational Mapping)입니다. 전통적인 ORM과 달리 스키마 중심(Schema-First) 접근 방식을 채택하여 개발자 경험과 타입 안전성을 극대화합니다.
+Prisma는 Node.js와 TypeScript 환경에서 사용할 수 있는 차세대 ORM입니다. 스키마 중심(Schema-First) 접근 방식을 통해 개발 생산성과 타입 안전성을 동시에 제공합니다.
 
 ### 최신 버전(v7.x)의 주요 변화
 
-최신 버전의 가장 큰 혁신은 기존의 Rust 기반 엔진에서 탈피하여 **순수 JavaScript/TypeScript 기반 런타임**으로 전환되었다는 점입니다.
-
-* **초경량 번들:** 바이너리 엔진 제거로 번들 크기가 약 90% 감소하여 AWS Lambda, Vercel Edge 등의 서버리스 환경에 최적화되었습니다.
-* **성능 향상:** 쿼리 실행 속도가 최대 3배 빨라졌으며 메모리 사용량이 크게 개선되었습니다.
-* **TypedSQL:** 직접 작성한 Raw SQL에 대해서도 자동 타입 생성을 지원하여 안전성을 높였습니다.
+* **Rust-Free 엔진 전환:** 기존의 무거운 Rust 바이너리 엔진 대신 순수 JavaScript/TypeScript 기반 런타임으로 전환되었습니다.
+* **초경량 번들:** 바이너리가 제거되면서 번들 크기가 약 90% 감소하여 서버리스 및 에지 컴퓨팅(Vercel, Cloudflare 등) 환경에 최적화되었습니다.
+* **성능 극대화:** 쿼리 실행 속도가 비약적으로 향상되었으며, 콜드 스타트 이슈가 크게 개선되었습니다.
+* **멀티 파일 스키마 정식 지원:** `prisma/schema/` 폴더 내에 여러 `.prisma` 파일을 나누어 관리할 수 있어 대규모 프로젝트의 유지보수성이 향상되었습니다.
 
 ---
 
 ## 2. Prisma의 3대 핵심 구성 요소
 
-Prisma는 유기적으로 연결된 세 가지 도구로 워크플로우를 완성합니다.
-
-1. **Prisma Client:** 애플리케이션에서 데이터베이스에 쿼리를 날리는 타입 안전한 쿼리 빌더입니다.
-2. **Prisma Migrate:** 스키마 정의를 실제 데이터베이스 구조로 변환하고 변경 이력을 관리하는 마이그레이션 도구입니다.
-3. **Prisma Studio:** 데이터베이스 데이터를 브라우저에서 직접 확인하고 수정할 수 있는 GUI 관리 도구입니다.
+1. **Prisma Client:** 애플리케이션에서 DB에 쿼리를 날리는 타입 안전한 쿼리 빌더입니다.
+2. **Prisma Migrate:** 스키마 정의를 실제 DB 구조로 변환하고 변경 이력을 관리하는 도구입니다.
+3. **Prisma Studio:** DB 데이터를 브라우저에서 시각적으로 관리할 수 있는 GUI 도구입니다.
 
 ---
 
 ## 3. 데이터베이스 연결 및 Datasource 설정
 
-Prisma는 `schema.prisma` 파일을 통해 데이터베이스 연결을 정의합니다.
+Prisma는 `schema.prisma`를 통해 데이터베이스와 연결됩니다.
 
-### Datasource 및 Provider 개념
+### Datasource 및 Connection URL
 
-* **Datasource:** 데이터가 흘러나오는 원천을 의미하며, 연결 주소(URL)와 드라이버 설정을 포함합니다.
-* **Provider:** 사용하는 데이터베이스 종류(PostgreSQL, MySQL, SQLite 등)를 명시합니다. 이는 Prisma 엔진이 해당 DB의 고유 문법으로 쿼리를 번역하는 기준이 됩니다.
-
-### Connection URL 구조
-
-일반적으로 `PROTOCOL://USER:PASSWORD@HOST:PORT/DATABASE` 형식을 따릅니다. 이는 리모컨 역할을 하는 클라이언트가 네트워크를 통해 원격지의 데이터베이스 서버(가상 PC 또는 클라우드)에 접속하기 위한 주소록 역할을 합니다.
-
-### Connection Pooling (커넥션 풀링)
-
-데이터베이스 연결은 비용이 많이 드는 작업이므로, 미리 연결을 생성해두고 재사용하는 '풀(Pool)'을 관리합니다. 서버리스 환경에서는 연결 제한을 방지하기 위해 Prisma Accelerate나 PgBouncer 같은 풀러 사용이 권장됩니다.
+* **Datasource:** 데이터 원천을 정의하며 `provider`(DB 종류)와 `url`(접속 주소)을 포함합니다.
+* **URL 구조:** `postgresql://USER:PASSWORD@HOST:PORT/DATABASE` 형태이며, 이는 리모컨(Client)이 원격지의 서버(DB)를 제어하기 위한 통로 역할을 합니다.
+* **Connection Pooling:** DB 연결 자원을 효율적으로 쓰기 위해 미리 연결을 만들어두는 기술입니다. 서버리스 환경에서는 연결 제한 방지를 위해 필수적으로 고려해야 합니다.
 
 ---
 
-## 4. Prisma Client 주요 메서드와 활용법
+## 4. Prisma Schema Language(PSL) 상세 문법
 
-Prisma Client는 직관적인 메서드를 통해 데이터를 제어합니다.
+### 모델 속성 및 함수
 
-### 주요 메서드
+* **@id vs @unique:** `@id`는 모델당 하나인 기본 키(PK)이며, `@unique`는 중복을 허용하지 않는 고유 키입니다.
+* **내장 함수:** `@default()` 내에 `autoincrement()`, `now()`, `uuid()`, `cuid()` 등을 사용하여 기본값을 자동 생성합니다.
+* **@db 속성:** `@db.Text`나 `@db.VarChar(255)`와 같이 특정 DB의 네이티브 타입을 명시적으로 지정할 때 사용합니다.
 
-* **upsert:** 데이터 존재 여부에 따라 업데이트 또는 생성을 동시에 처리합니다.
-* **aggregate / groupBy:** 통계 계산 및 그룹화 작업을 수행합니다.
-* **$transaction:** 여러 쿼리를 하나의 작업 단위로 묶어 모두 성공하거나 모두 실패하도록 보장합니다.
+### 매핑 및 인덱스
 
-### 쿼리 옵션 및 Fluent API
-
-* **include vs select:** `include`는 관계된 모델 전체를 가져오고, `select`는 필요한 특정 필드만 골라 가져옵니다. 두 옵션은 동시에 사용할 수 없습니다.
-* **Fluent API:** `prisma.user.findUnique({ where: { id: 1 } }).posts()`와 같이 마침표를 이용해 관계 데이터를 단계적으로 파고드는 직관적인 쿼리 방식을 제공합니다.
+* **@map & @@map:** DB의 컬럼명이나 테이블명이 코드상의 이름과 다를 때 매핑합니다. (예: `createdAt` -> `created_at`)
+* **@@index:** 여러 필드를 묶어 복합 인덱스를 생성하여 검색 성능을 최적화합니다.
 
 ---
 
-## 5. Prisma Migrate를 이용한 스키마 관리
+## 5. Prisma Client 주요 메서드와 활용법
 
-마이그레이션은 데이터베이스의 설계도와 실제 상태를 동기화하는 과정입니다.
-
-### @id vs @unique
-
-* **@id (Primary Key):** 레코드를 식별하는 유일한 주민등록번호 역할을 하며 모델당 하나만 존재합니다.
-* **@unique (Unique Key):** 이메일처럼 중복을 허용하지 않는 보조 정보이며 여러 필드에 설정 가능합니다.
-
-### 명령어 체계
-
-* **migrate dev:** 개발 환경에서 스키마 변경을 감지하고 SQL 마이그레이션 파일을 생성 및 적용합니다.
-* **migrate deploy:** 운영 환경에서 이미 생성된 마이그레이션 파일들을 순서대로 적용만 수행합니다. 새로운 파일을 생성하거나 DB를 초기화하지 않습니다.
+* **upsert:** 데이터 존재 여부에 따라 Update 또는 Insert를 자동 선택합니다.
+* **include vs select:** `include`는 관계 모델 전체를, `select`는 특정 필드만 선택하여 가져옵니다. (동시 사용 불가)
+* **Fluent API:** `prisma.user.findUnique({..}).posts()` 처럼 체이닝을 통해 관계 데이터를 직관적으로 조회합니다.
+* **$transaction:** 여러 쿼리를 하나의 작업 단위로 묶어 무결성을 보장합니다.
 
 ---
 
-## 6. Prisma Studio를 통한 시각적 데이터 관리
+## 6. Prisma Migrate를 이용한 스키마 관리
 
-`npx prisma studio` 명령어로 실행되는 이 도구는 웹 기반 GUI를 제공합니다.
+마이그레이션은 설계도와 실제 DB 상태를 동기화하는 '타임머신' 역할을 합니다.
 
-* **직관적인 CRUD:** 엑셀처럼 데이터를 직접 입력, 수정, 삭제할 수 있습니다.
-* **관계 시각화:** 관계된 데이터를 클릭 한 번으로 넘나들며 확인할 수 있어 복잡한 관계형 모델 파악에 용이합니다.
-* **트랜잭션 저장:** 수정 사항을 즉시 반영하지 않고 상단의 Save 버튼을 누를 때 한꺼번에 반영하여 실수를 방지합니다.
+* **npx prisma migrate dev:** 개발 단계에서 변경 사항을 기록(SQL 생성)하고 반영합니다.
+* **npx prisma migrate deploy:** 운영 단계에서 이미 검증된 마이그레이션 파일들을 순서대로 적용합니다.
+* **_prisma_migrations:** DB 내부에 자동 생성되는 테이블로, 어떤 마이그레이션이 실행되었는지 관리합니다.
 
 ---
 
-## 7. 환경 분리 및 위기 대처 전략
+## 7. Prisma Studio를 통한 시각적 데이터 관리
 
-### 환경 분리 (Environment Separation)
+`npx prisma studio` 명령어로 실행하며, 복잡한 SQL 없이 데이터를 조작합니다.
 
-`.env` 파일을 통해 개발(Local/Dev)과 운영(Prod) 환경의 DATABASE_URL을 분리 관리해야 합니다. 배포 환경에서는 보안을 위해 CI/CD 플랫폼의 환경 변수 관리 기능을 활용합니다.
+* **엑셀 방식 CRUD:** 셀 더블 클릭으로 수정하고 상단의 'Save Changes'로 일괄 반영합니다.
+* **관계 데이터 제어:** 관계된 레코드를 팝업이나 탭을 통해 즉시 확인하고 연결할 수 있습니다.
+* **필터 및 정렬:** 대량의 데이터 중 필요한 조건만 빠르게 추출하여 검토할 수 있습니다.
 
-### 상황별 대응 명령어
+---
 
-* **상태 점검:** `npx prisma migrate status`를 통해 DB와 스키마의 일치 여부를 확인합니다.
-* **마이그레이션 실패 시:** `npx prisma migrate resolve`를 사용하여 실패한 기록을 수동으로 처리합니다.
-* **초기화:** 로컬 환경에서 구조가 꼬였을 경우 `npx prisma migrate reset`으로 DB를 클린 상태로 돌릴 수 있습니다 (데이터 유실 주의).
-* **역공학:** 이미 존재하는 DB에서 스키마를 추출할 때는 `npx prisma db pull`을 사용합니다.
+## 8. 환경 분리 및 위기 대처 전략
 
+### 환경 분리
 
+* **.env 활용:** 개발용과 운영용 DB URL을 분리합니다. CI/CD 환경에서는 보안을 위해 플랫폼의 환경 변수 관리 기능을 사용합니다.
+* **dotenv-cli:** `npx dotenv -e .env.production -- npx prisma migrate deploy`와 같이 실행 시점에 환경 파일을 명시적으로 지정할 수 있습니다.
+
+### 위기 대처 명령어
+
+* **status:** 현재 마이그레이션 상태가 정상인지 진단합니다.
+* **resolve:** 마이그레이션이 실패하여 DB 상태가 고정되었을 때 수동으로 해결합니다.
+* **reset:** 로컬 환경에서 모든 데이터를 밀고 처음부터 다시 시작할 때 사용합니다. (운영 서버 사용 금지)
+* **db pull:** 이미 구축된 DB에서 역으로 스키마 파일을 추출할 때 사용합니다.
