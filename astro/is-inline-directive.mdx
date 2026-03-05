@@ -1,0 +1,57 @@
+# Astro `is:inline` 디렉티브
+
+## 개요
+
+`is:inline`은 Astro가 `<script>` 또는 `<style>` 태그를 빌드 타임에 처리하지 않고 HTML에 있는 그대로 출력하도록 지시하는 템플릿 디렉티브입니다.
+
+## 기본 동작 (is:inline 없을 때)
+
+Astro는 `.astro` 파일 안의 `<script>` 태그를 기본적으로 다음과 같이 처리합니다.
+
+1. **번들링**: Vite를 통해 TypeScript 변환 및 최적화
+2. **호이스팅**: `<head>`로 이동
+3. **중복 제거**: 동일한 스크립트는 한 번만 로드
+
+## is:inline 동작
+
+```html
+<script is:inline src="https://example.com/script.js" data-config="value">
+</script>
+```
+
+`is:inline`을 추가하면 Astro는 해당 태그를 처리하지 않습니다.
+
+- 번들링 안 함
+- 호이스팅 안 함 (DOM 위치 그대로 유지)
+- 중복 제거 안 함
+- TypeScript 변환 안 함
+
+## 사용 예시
+
+### 서드파티 스크립트
+
+Giscus, Google Tag Manager처럼 `data-*` 속성으로 설정값을 전달하고 삽입 위치가 중요한 외부 스크립트에 사용합니다.
+
+```html
+<script is:inline src="https://giscus.app/client.js"
+  data-repo="owner/repo"
+  data-repo-id="R_xxx"
+  data-mapping="pathname"
+  async>
+</script>
+```
+
+Giscus는 자신의 `<script>` 태그 위치를 기준으로 바로 뒤에 `<iframe>`을 삽입합니다. `is:inline` 없이 Astro가 스크립트를 `<head>`로 이동시키면 iframe이 의도한 위치에 렌더링되지 않습니다.
+
+## 언제 사용해야 하나
+
+| 상황 | 권장 |
+|------|------|
+| 외부 서드파티 스크립트 (Giscus, GTM 등) | `is:inline` |
+| `data-*` 속성으로 설정값 전달 | `is:inline` |
+| 삽입 위치가 중요한 스크립트 | `is:inline` |
+| 프로젝트 내부 JS/TS 코드 | 일반 `<script>` (Astro가 최적화) |
+
+## 참고
+
+- [Astro 공식 문서 - Template directives](https://docs.astro.build/en/reference/directives-reference/#isinline)
